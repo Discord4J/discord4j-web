@@ -1,7 +1,7 @@
-import Vue, { VNode } from 'vue';
+import Vue, { VNode } from "vue"
 
-declare module '*.vue' {
-  export default Vue;
+declare module "*.vue" {
+  export default Vue
 }
 
 declare global {
@@ -11,7 +11,7 @@ declare global {
     // tslint:disable no-empty-interface
     interface ElementClass extends Vue {}
     interface IntrinsicElements {
-      [elem: string]: any;
+      [elem: string]: any
     }
   }
 }
