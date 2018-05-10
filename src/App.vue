@@ -2,15 +2,18 @@
   #app
     nav-bar
     router-view
+    footer-bar
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator"
 import NavBar from "@/components/NavBar.vue"
+import FooterBar from "@/components/FooterBar.vue"
 
 @Component({
   components: {
     NavBar,
+    FooterBar,
   },
 })
 export default class App extends Vue {}
