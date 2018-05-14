@@ -52,6 +52,10 @@ export default class NavBar extends Vue {
   left: 20px;
 }
 
+span.navbar-item {
+  padding-right: 0;
+}
+
 .navbar {
   background: #ffffff;
   .circle {
