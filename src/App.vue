@@ -22,6 +22,14 @@ export default class App extends Vue {}
 <style lang="scss">
 @import "~bulma/bulma";
 
+.blurple {
+  color: #7289da;
+}
+
+.blurple.dark {
+  color: #495eab;
+}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

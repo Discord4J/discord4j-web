@@ -3,10 +3,9 @@
     .container
       .navbar-brand
         router-link(to="/").navbar-item
-          .logo
-            .circle
-              img(src="https://discord4j.com/static/img/avatar.png", alt="Discord4J")
-            span  Discord4J
+          img.nav-logo(src="/logo.png", alt="Discord4J")
+          .nav-text Discord
+            span.blurple 4J
         .navbar-burger(role="button", aria-label="menu", aria-expanded="false", @click="showNav = !showNav", :class="{'is-active': showNav}")
           span(aria-hidden="true")
           span(aria-hidden="true")
@@ -22,9 +21,9 @@
               span View Source
           span.navbar-item
             a.button.is-outlined(href="https://discord.gg/NxGAeCY")
-              span.icon.discord
+              span.icon.blurple
                 i.fab.fa-discord
-              span.discord-dark Discord Server
+              span.blurple.dark Discord Server
 </template>
 
 <script lang="ts">
@@ -37,39 +36,24 @@ export default class NavBar extends Vue {
 </script>
 
 <style lang="scss">
-.discord {
-  color: #7289DA;
-}
-
-.discord-dark {
-  color: #495eab;
-}
-
-.logo {
-  font-family: "Uni Sans";
-  font-weight: 900;
-  font-size: 1.75rem;
-  left: 20px;
-}
-
 span.navbar-item {
   padding-right: 0;
 }
 
 .navbar {
   background: #ffffff;
-  .circle {
-    display: inline-block;
-    width: 2.75rem;
-    height: 2.75rem;
-    line-height: 3.25rem;
-    border-radius: 50%;
-    background: #215454;
-    img {
-      position: relative;
-      left: 2px;
-      top: 1px;
-    }
-  }
+}
+
+.navbar-item .nav-logo {
+  max-height: 3rem;
+}
+
+.nav-text {
+  color: #2C2F33;
+  margin-left: 0.5rem;
+  font-family: "Uni Sans";
+  height: 2.5rem;
+  font-size: 1.75rem;
+  line-height: 3rem;
 }
 </style>

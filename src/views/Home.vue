@@ -2,13 +2,12 @@
   .home
     section.hero.has-shadow
       .hero-body
-        .top
-          .circle
-            img(src="https://discord4j.com/static/img/avatar.png")
+        .logo
+          img(src="/logo.png")
+          .text Discord
+            span.blurple 4J
         .container
-          h1.title Discord4J
-          h2.subtitle
-          | A REST/WS wrapper for the official Discord Bot API.
+          h1.subtitle A REST/WS wrapper for the official Discord Bot API.
     section.section.container
       h1.title Overview
       p
@@ -29,22 +28,29 @@ export default class Home extends Vue {}
 <style lang="scss">
 .hero {
   background: linear-gradient(#FCFDFE, #F3F5F4);
-  padding: 2.2em 0 3em;
 }
 
-.top {
-  .circle {
-    display: inline-block;
-    width: 11em;
-    height: 11rem;
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    vertical-align: middle;
+    width: 12rem;
+    height: 12rem;
     border-radius: 50%;
-    background: #215454;
-    img {
-      position: relative;
-      left: 0.2rem;
-      top: 1rem;
-    }
   }
-  padding-bottom: 1rem;
+
+  .text {
+    color: #2C2F33;
+    margin-left: 1.5rem;
+    position: relative;
+    top: 0.8rem;
+    font-family: "Uni Sans";
+    font-size: 5rem;
+  }
+
+  padding-bottom: 3rem;
 }
 </style>
