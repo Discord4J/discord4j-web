@@ -7,15 +7,24 @@
           .text Discord
             span.blurple 4J
         .container
-          h1.subtitle A REST/WS wrapper for the official Discord Bot API.
-    section.section.container
-      h1.title Overview
-      p
-      | Discord4J is a wrapper for Discord's websocket and REST API. It provides an easy-to-use implementation which has features suitable for both the most experienced and inexperienced Java programmers.
-      hr
-      h1.title Why use Discord4J?
-      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pulvinar dolor quam, quis tristique nulla sodales quis. Quisque pulvinar interdum ullamcorper. Vestibulum arcu lacus, dictum eget convallis at, sodales vitae dolor. Nullam cursus a urna sed malesuada. Donec sit amet erat fringilla, semper dui et, laoreet lectus. Mauris mattis, metus ac blandit commodo, ipsum neque dictum diam, ac tempor lacus lorem luctus tellus. Vestibulum eu cursus est, et malesuada lorem. Donec maximus tempor est nec blandit. Aliquam quis risus eget nisl fermentum tempor eu nec lorem. Sed a eleifend purus. Proin finibus condimentum nisi. Fusce commodo ex nisi, a aliquet nisl lacinia ac. Donec eget ullamcorper odio.
-    section.container
+          h1.subtitle.has-text-weight-bold A JVM-based REST/WS wrapper for the official Discord Bot API.
+    section.section.container.about
+      .columns
+        .column
+          .img
+            i.fas.fa-boxes.fa-5x
+          h2.title Modularity
+          p Reactor is a fully non-blocking foundation with efficient demand management. It directly interacts with Java 8 functional API, Completable Future, Stream and Duration.
+        .column
+          .img
+            i.fas.fa-cog.fa-5x
+          h2.title Reactive
+          p Reactor is a fully non-blocking foundation with efficient demand management. It directly interacts with Java 8 functional API, Completable Future, Stream and Duration.
+        .column
+          .img
+            i.fas.fa-rocket.fa-5x
+          h2.title Performant
+          p Reactor is a fully non-blocking foundation with efficient demand management. It directly interacts with Java 8 functional API, Completable Future, Stream and Duration.
 </template>
 
 <script lang="ts">
@@ -27,10 +36,11 @@ export default class Home extends Vue {}
 
 <style lang="scss">
 .hero {
-  background: linear-gradient(#FCFDFE, #F3F5F4);
+  background: linear-gradient(#f7f9fc, #EBEFF7);
 }
 
 .logo {
+  color: #2C2F33;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,7 +53,6 @@ export default class Home extends Vue {}
   }
 
   .text {
-    color: #2C2F33;
     margin-left: 1.5rem;
     position: relative;
     top: 0.8rem;
@@ -52,5 +61,19 @@ export default class Home extends Vue {}
   }
 
   padding-bottom: 3rem;
+}
+
+.about {
+  .img {
+    width: 25%;
+    margin: auto;
+  }
+  .title {
+    margin-top: 1.5rem;
+  }
+  p {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+  }
 }
 </style>
