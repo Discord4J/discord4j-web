@@ -1,7 +1,8 @@
 <template lang="pug">
   #app
     nav-bar
-    router-view
+    .main-content
+      router-view
     footer-bar
 </template>
 
@@ -22,23 +23,34 @@ export default class App extends Vue {}
 <style lang="scss">
 @import "~bulma/bulma";
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,500|Montserrat");
+@import "style.scss";
 
 .blurple {
-  color: #7289da;
+  color: $blurple;
 }
 
 .blurple.dark {
-  color: #495eab;
+  color: $blurple-dark;
 }
 
 .title {
   font-family: 'Montserrat', sans-serif;
 }
 
+html, body, #app {
+  height: 100%;
+}
+
 #app {
+  display: flex;
+  flex-direction: column;
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+}
+
+.main-content {
+  flex: 1;
 }
 </style>

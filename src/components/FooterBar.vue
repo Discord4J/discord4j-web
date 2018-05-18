@@ -35,12 +35,16 @@ export default class Footer extends Vue {}
 </script>
 
 <style lang="scss">
+@import "../style.scss";
+
 .footer {
+  background-color: $footer-light;
+  border-top: 1px solid whitesmoke;
   padding: 3rem 0 0;
 
   .bottom {
     margin-top: 1rem;
-    background: #f4f4f4;
+    background-color: $footer-dark;
     padding: 1.5rem 0;
   }
 }

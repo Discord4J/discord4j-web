@@ -3,7 +3,7 @@
     .container
       .navbar-brand
         router-link(to="/").navbar-item
-          img.nav-logo(src="/logo.png", alt="Discord4J")
+          img.nav-logo(src="/logo.png", draggable="false", alt="Discord4J")
           .nav-text Discord
             span.blurple 4J
         .navbar-burger(role="button", aria-label="menu", aria-expanded="false", @click="showNav = !showNav", :class="{'is-active': showNav}")
@@ -41,7 +41,20 @@ span.navbar-item {
 }
 
 .navbar {
-  background: #ffffff;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  &.has-shadow {
+    box-shadow: 0px 2px 2px 0 #eeeeee;
+  }
+}
+
+.navbar-brand {
+  a {
+    color: #2C2F33;
+    &:hover {
+      color: #36487f;
+    }
+  }
 }
 
 .navbar-item .nav-logo {
@@ -49,7 +62,6 @@ span.navbar-item {
 }
 
 .nav-text {
-  color: #2C2F33;
   margin-left: 0.5rem;
   font-family: "Uni Sans";
   height: 2.5rem;
