@@ -28,7 +28,7 @@
           .img
             i.fas.fa-boxes.fa-5x
           h2.title Modular
-          p Rebuilt from the ground up with a focus on modularity, Discord4J allows for extreme customizability and flexibility in how you use the library.
+          p Built from the ground up with a focus on modularity, Discord4J allows for extreme customizability and flexibility in how you use the library.
         .column
           .img
             i.fas.fa-rocket.fa-5x

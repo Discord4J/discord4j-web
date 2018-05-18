@@ -7,13 +7,13 @@
           ul
             li
               a(href="https://jitpack.io/com/github/Discord4J/Discord4j/2.10.1/javadoc/") Javadocs
+            li
+              a(href="https://projectreactor.io/docs/core/release/reference/") Reactor Guide
         .column
           .title.is-5 Resources
           ul
             li
-              a Lorem
-            li
-              a Ipsum
+              a(href="https://github.com/Discord4J/Discord4J/wiki") GitHub Wiki
         .column
           .title.is-5 Community
           ul
@@ -21,10 +21,14 @@
               a(href="https://github.com/Discord4J") GitHub
             li
               a(href="https://discord.gg/NxGAeCY") Discord
-    .bottom Copyright © 2018 Discord4J is licensed under 
-        span
+    .bottom
+      .container
+        p Copyright © 2018 Discord4J - Licensed under 
           a(href="https://www.gnu.org/licenses/lgpl-3.0.en.html") LGPLv3
-        span .
+          | .
+        p This site is powered by 
+          a(href="https://vuejs.org") Vue.js
+          | .
 </template>
 
 <script lang="ts">

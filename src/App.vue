@@ -23,7 +23,12 @@ export default class App extends Vue {}
 <style lang="scss">
 @import "~bulma/bulma";
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,500|Montserrat");
-@import "style.scss";
+@import "style.scss"; 
+
+@font-face {
+  font-family: "Uni Sans";
+  src: url("/fonts/Uni Sans Heavy.woff");
+}
 
 .blurple {
   color: $blurple;
