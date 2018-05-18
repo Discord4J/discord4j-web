@@ -9,6 +9,10 @@
         h1.subtitle.has-text-weight-bold A JVM-based REST/WS wrapper for the official 
           a(href="https://discordapp.com/developers/docs/intro") Discord Bot API
           | .
+        a.button.is-success.is-medium
+          span.icon
+            i.fas.fa-chevron-down
+          span Get Started
 </template>
 
 <script lang="ts">
@@ -19,13 +23,15 @@ export default class Hero extends Vue {}
 </script>
 
 <style lang="scss">
+@import "../style.scss";
+
 .hero {
-  border-bottom: 2px solid #eeeeee;
+  border-bottom: 2px solid #efefef;
   background: #edf0f7;
 
   h1 {
     a {
-      color: #495eab;
+      color: $blurple-dark;
       &:hover {
         color: #363636;
       }
@@ -42,7 +48,7 @@ export default class Hero extends Vue {}
 
 .logo {
   user-select: none;
-  color: #2C2F33;
+  color: $discord-dark;
   display: flex;
   align-items: center;
   justify-content: center;

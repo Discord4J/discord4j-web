@@ -1,42 +1,45 @@
 <template lang="pug">
   .home
     hero
-    section.section.container.about
-      .columns
-        .column
-          .img
-            i.fas.fa-sync-alt.fa-5x
-          h2.title Reactive
-          p
-            | Discord4J is a reactive interface for the official 
-            a(href="https://discordapp.com/") Discord
-            |  API designed using 
-            a(href="https://www.reactivemanifesto.org/") reactive principles
-            |  using the 
-            a(href="https://projectreactor.io/") Reactor framework
-            |  for an asynchronous and non-blocking API.
-        .column
-          .img
-            i.fas.fa-boxes.fa-5x
-          h2.title Modular
-          p Built from the ground up with a focus on modularity, Discord4J allows for extreme customizability and flexibility in how you use the library.
-        .column
-          .img
-            i.fas.fa-rocket.fa-5x
-          h2.title Performant
-          p
-            | Written in Java 8 and built on top of 
-            a(href="https://github.com/netty/netty") Netty
-            | , Discord4J offers a fast, functional, and completely non-blocking API with lazy processing included.
+    section.section.about
+      .container
+        .columns
+          .column
+            .img
+              i.fas.fa-sync-alt.fa-5x
+            h2.title Reactive
+            p
+              | Discord4J is a reactive interface for the official 
+              a(href="https://discordapp.com/") Discord
+              |  API designed using 
+              a(href="https://www.reactivemanifesto.org/") reactive principles
+              |  using the 
+              a(href="https://projectreactor.io/") Reactor framework
+              |  for an asynchronous and non-blocking API.
+          .column
+            .img
+              i.fas.fa-boxes.fa-5x
+            h2.title Modular
+            p Built from the ground up with a focus on modularity, Discord4J allows for extreme customizability and flexibility in how you use the library.
+          .column
+            .img
+              i.fas.fa-rocket.fa-5x
+            h2.title Performant
+            p
+              | Written in Java 8 and built on top of 
+              a(href="https://github.com/netty/netty") Netty
+              | , Discord4J offers a fast, functional, and completely non-blocking API with lazy processing included.
+    get-started
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator"
 import Hero from "@/components/Hero.vue"
+import GetStarted from "@/components/GetStarted.vue"
 
 @Component({
   components: {
-    Hero,
+    Hero, GetStarted,
   },
 })
 export default class Home extends Vue {}

@@ -30,6 +30,15 @@ export default class App extends Vue {}
   src: url("/fonts/Uni Sans Heavy.woff");
 }
 
+section {
+  border-bottom: 2px solid #eeeeee;
+}
+
+code {
+  border: 1px solid #c8e2b5;
+  color: #6db33f;
+}
+
 .blurple {
   color: $blurple;
 }

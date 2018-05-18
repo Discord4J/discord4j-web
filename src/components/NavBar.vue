@@ -36,6 +36,8 @@ export default class NavBar extends Vue {
 </script>
 
 <style lang="scss">
+@import "../style.scss";
+
 span.navbar-item {
   padding-right: 0;
 }
@@ -54,7 +56,7 @@ span.navbar-item {
 
 .navbar-brand {
   a {
-    color: #2C2F33;
+    color: $discord-dark;
     &:hover {
       color: #36487f;
     }
