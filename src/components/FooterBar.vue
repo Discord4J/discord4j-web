@@ -1,6 +1,6 @@
 <template lang="pug">
   footer.footer
-    .container
+    .top.container
       .columns
         .column
           .title.is-5 Documentation
@@ -25,8 +25,7 @@
       .container
         p Copyright © 2018 Discord4J - Licensed under 
           a(href="https://www.gnu.org/licenses/lgpl-3.0.en.html") LGPLv3
-          | .
-        p This site is powered by 
+          | . Powered by 
           a(href="https://vuejs.org") Vue.js
           | .
 </template>
@@ -44,10 +43,12 @@ export default class Footer extends Vue {}
 .footer {
   background-color: $footer-light;
   border-top: 1px solid whitesmoke;
-  padding: 3rem 0 0;
+  padding: 0;
+  .top {
+    padding: 2rem 0;
+  }
 
   .bottom {
-    margin-top: 1rem;
     background-color: $footer-dark;
     padding: 1.5rem 0;
   }

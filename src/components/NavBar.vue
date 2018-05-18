@@ -48,6 +48,10 @@ span.navbar-item {
   }
 }
 
+.navbar-item {
+  user-select: none;
+}
+
 .navbar-brand {
   a {
     color: #2C2F33;
