@@ -14,7 +14,7 @@
       .columns
         .column
           .img
-            i.fas.fa-cog.fa-5x
+            i.fas.fa-sync-alt.fa-5x
           h2.title Reactive
           p
             | Discord4J is a reactive interface for the official 
