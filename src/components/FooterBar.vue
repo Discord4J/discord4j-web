@@ -6,14 +6,18 @@
           .title.is-5 Documentation
           ul
             li
-              a(href="https://jitpack.io/com/github/Discord4J/Discord4j/2.10.1/javadoc/") Javadocs
+              a(href="http://discord4j.readthedocs.io/en/latest/") Discord4J Docs
             li
-              a(href="https://projectreactor.io/docs/core/release/reference/") Reactor Guide
+              a(href="https://jitpack.io/com/github/Discord4J/Discord4j/2.10.1/javadoc/") Javadocs
         .column
           .title.is-5 Resources
           ul
             li
               a(href="https://github.com/Discord4J/Discord4J/wiki") GitHub Wiki
+            li
+              a(href="https://projectreactor.io/docs/core/release/reference/") Reactor Guide
+            li
+              a(href="https://discordapp.com/developers/docs/intro") Discord API
         .column
           .title.is-5 Community
           ul
