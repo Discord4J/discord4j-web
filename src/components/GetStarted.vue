@@ -9,8 +9,6 @@
               | . To interact with all facets of the Discord API built on top of all the other modules, import the 
               code.inline core
               |  module into your favourite dependency manager.
-            .title
-              i.fas.fa-spinner.fa-9x
           .column
             h2.title Configuration
             .box.code
@@ -22,13 +20,11 @@
                     a Maven
                   li(@click="setIndex(2)", :class="{'is-active': index === 2}")
                     a SBT
-              transition(name="slide-fade", tag="div", mode="out-in")
-                .a(v-if="index === 0", key="0", style="height: 279px;")
-                  prism(language="groovy") {{ gradle }}
-                .a(v-if="index === 1", key="1", style="height: 24rem;")
-                  prism(language="xml") {{ maven }}
-                .a(v-if="index === 2", key="2", style="height: 195px;")
-                  prism(language="java") {{ sbt }}
+              .code-wrapper(:style="{ height: heightPx }")
+                transition(name="slide-fade", tag="div", mode="out-in")
+                  prism(v-if="index === 0", key="gradle", language="groovy") {{ gradle }}
+                  prism(v-if="index === 1", key="maven", language="xml") {{ maven }}
+                  prism(v-if="index === 2", key="sbt", language="java") {{ sbt }}
 </template>
 
 <script lang="ts">
@@ -41,6 +37,8 @@ import Prism from "vue-prism-component"
   },
 })
 export default class GetStarted extends Vue {
+  public heightPx: string = "279px"
+
   public index: number = 0 // 0, 1, 2
 
   public maven: string = `<!-- pom.xml -->
@@ -82,6 +80,13 @@ resolvers += "jitpack.io" at "https://jitpack.io"`
 
   public setIndex(num: number): void {
     this.index = num
+    if (this.index === 0) {
+      this.heightPx = "279px"
+    } else if (this.index === 1) {
+      this.heightPx = "24rem"
+    } else {
+      this.heightPx = "195px"
+    }
   }
 }
 </script>
@@ -93,8 +98,8 @@ resolvers += "jitpack.io" at "https://jitpack.io"`
   margin: 0;
 }
 
-.a {
-  transition: all .3s ease;
+.code-wrapper {
+  transition: height 0.25s ease-in-out;
 }
 
 .get-started {
@@ -105,17 +110,33 @@ resolvers += "jitpack.io" at "https://jitpack.io"`
   }
 }
 
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
+.box.code .tabs {
+  margin: 0;
+}
+
+.code-wrapper {
+  transition: height 0.25s ease-in-out;
+}
+
+.get-started {
+  background: #f2f3f7;
+  p {
+    text-align: left;
+    padding: 0 2rem;
+  }
+}
+
 .slide-fade-enter-active {
-  transition: opacity .3s ease-in;
+  transition: all 0.25s ease-in-out;
 }
+
 .slide-fade-leave-active {
-  transition: opacity .3s ease-out;
+  transition: all 0.15s ease-in-out;
 }
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  // transform: translateX(10px);
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateX(10px);
   opacity: 0;
 }
 </style>
