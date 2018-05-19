@@ -22,8 +22,9 @@ export default class App extends Vue {}
 
 <style lang="scss">
 @import "~bulma/bulma";
+@import "prism.scss";
 @import url("https://fonts.googleapis.com/css?family=Raleway:400,500|Montserrat");
-@import "style.scss"; 
+@import "style.scss";
 
 @font-face {
   font-family: "Uni Sans";
@@ -34,7 +35,11 @@ section {
   border-bottom: 2px solid #eeeeee;
 }
 
-code {
+.box.code {
+  padding: 0;
+}
+
+code.inline {
   border: 1px solid #c8e2b5;
   color: #6db33f;
 }
