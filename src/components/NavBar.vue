@@ -73,8 +73,10 @@ span.navbar-item {
 }
 
 .navbar-menu.is-active {
+  z-index: -1;
   position: absolute;
   width: 100%;
+  animation: slide-down 0.15s ease;
 }
 
 .nav-text {
@@ -83,5 +85,17 @@ span.navbar-item {
   height: 2.5rem;
   font-size: 1.75rem;
   line-height: 3rem;
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 </style>
