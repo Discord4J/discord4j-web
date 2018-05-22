@@ -23,6 +23,9 @@ export default class Hero extends Vue {}
 </script>
 
 <style lang="scss">
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/derived-variables";
+@import "~bulma/sass/utilities/mixins";
 @import "../colours.scss";
 
 .hero {
@@ -55,17 +58,43 @@ export default class Hero extends Vue {}
 
   img {
     vertical-align: middle;
-    width: 12rem;
-    height: 12rem;
+    width: 5rem;
+    height: 5rem;
     border-radius: 50%;
   }
 
   .text {
-    margin-left: 1.5rem;
+    margin-left: 0.5rem;
     position: relative;
-    top: 0.8rem;
+    top: 0.35rem;
     font-family: "Uni Sans";
-    font-size: 5rem;
+    font-size: 2.1rem;
+  }
+
+  @include tablet {
+    img {
+      width: 7.2rem;
+      height: 7.2rem;
+    }
+    .text {
+      margin-left: 1rem;
+      top: 0.4rem;
+      font-size: 3rem;
+    }
+  }
+
+  @include desktop {
+    img {
+      width: 12rem;
+      height: 12rem;
+      border-radius: 50%;
+    }
+
+    .text {
+      font-size: 5rem;
+      margin-left: 1.5rem;
+      top: 0.8rem;
+    }
   }
 
   padding-bottom: 3rem;
