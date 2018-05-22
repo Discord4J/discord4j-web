@@ -25,6 +25,10 @@ export default class App extends Vue {}
 
 section {
   border-bottom: 2px solid #eeeeee;
+  p {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+  }
 }
 
 .box.code {

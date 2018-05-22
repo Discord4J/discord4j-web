@@ -1,5 +1,5 @@
 <template lang="pug">
-  .home
+  .landing
     hero
     section.section.about
       .container
@@ -69,8 +69,6 @@ export default class Home extends Vue {}
     margin-top: 1.5rem;
   }
   p {
-    font-family: "Raleway", sans-serif;
-    font-weight: 500;
     padding: 0 2rem;
   }
 }
