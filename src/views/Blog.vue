@@ -50,7 +50,8 @@ export default class Blog extends Vue {}
 
     &:hover {
       background-color: #fcfdff;
-      box-shadow: 0 4px 6px rgba(35, 39, 42, 0.1), 0 0 0 1px rgba(35, 39, 42, 0.075);
+      box-shadow: 0 4px 6px rgba(35, 39, 42, 0.1),
+        0 0 0 1px rgba(35, 39, 42, 0.075);
 
       .post-title {
         color: #36487f;
@@ -65,6 +66,44 @@ export default class Blog extends Vue {}
     .subtitle {
       font-size: 1.5rem;
     }
+  }
+
+  .post {
+    position: relative;
+    display: block;
+    cursor: pointer;
+  }
+
+  .post:before,
+  .post:after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 0.2rem;
+    top: 4rem;
+    margin-top: -0.5px;
+    background: $blurple;
+  }
+
+  .post:before {
+    left: 1.5rem;
+  }
+  .post:after {
+    right: 1rem;
+    background: $blurple;
+    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .post:hover:before {
+    background: $blurple;
+    width: calc(100% - 2.5rem);
+    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  .post:hover:after {
+    background: transparent;
+    width: calc(100% - 2.5rem);
+    transition: 0s;
   }
 
   p,
@@ -94,6 +133,7 @@ export default class Blog extends Vue {}
   }
 
   .post-subtitle {
+    padding-top: 0.25rem;
     font-size: 1.25rem;
     font-weight: 300;
   }
