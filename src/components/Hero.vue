@@ -8,7 +8,6 @@
             span.blurple 4J
         h1.subtitle.has-text-weight-bold A JVM-based REST/WS wrapper for the official 
           a(href="https://discordapp.com/developers/docs/intro") Discord Bot API
-          | .
         a.button.is-success.is-medium
           span.icon
             i.fas.fa-chevron-down
@@ -40,8 +39,9 @@ export default class Hero extends Vue {}
       }
     }
 
-    animation: fadein 0.6s 1;
-    animation-fill-mode: forwards;
+    animation: slideup 0.75s ease;
+    animation-fill-mode: backwards;
+    animation-delay: 0.5s;
   }
 }
 
@@ -98,11 +98,10 @@ export default class Hero extends Vue {}
   }
 
   padding-bottom: 3rem;
-  animation: appear 0.5s 1;
-  animation-fill-mode: forwards;
+  animation: appear 0.5s ease;
 }
 
-@keyframes fadein {
+@keyframes slideup {
   0% {
     transform: translateY(100%);
     opacity: 0;

@@ -46,7 +46,7 @@ export default class Footer extends Vue {}
 
 .footer {
   background-color: $footer-light;
-  border-top: 1px solid whitesmoke;
+  border-top: 1px solid #eeeeee;
   padding: 0;
   .top {
     padding: 2rem 0;
@@ -59,6 +59,7 @@ export default class Footer extends Vue {}
   }
 
   .bottom {
+    border-top: 1px solid #eeeeee;
     background-color: $footer-dark;
     padding: 1.5rem 1rem;
   }

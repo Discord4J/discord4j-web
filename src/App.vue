@@ -25,6 +25,9 @@ export default class App extends Vue {}
 
 section {
   border-bottom: 2px solid #eeeeee;
+  &:last-of-type {
+    border-bottom: none;
+  }
   p {
     font-family: "Raleway", sans-serif;
     font-weight: 500;
