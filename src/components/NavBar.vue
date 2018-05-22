@@ -67,6 +67,11 @@ span.navbar-item {
   max-height: 3rem;
 }
 
+.navbar-burger {
+  height: 4rem;
+  width: 4rem;
+}
+
 .nav-text {
   margin-left: 0.5rem;
   font-family: "Uni Sans";
