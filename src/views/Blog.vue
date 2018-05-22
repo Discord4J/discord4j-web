@@ -74,36 +74,38 @@ export default class Blog extends Vue {}
     cursor: pointer;
   }
 
-  .post:before,
-  .post:after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 0.2rem;
-    top: 4rem;
-    margin-top: -0.5px;
-    background: $blurple;
-  }
+  @include desktop {
+    .post:before,
+    .post:after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 0.2rem;
+      top: 4rem;
+      margin-top: -0.5px;
+      background: $blurple;
+    }
 
-  .post:before {
-    left: 1.5rem;
-  }
-  .post:after {
-    right: 1rem;
-    background: $blurple;
-    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
-  }
+    .post:before {
+      left: 1.5rem;
+    }
+    .post:after {
+      right: 1rem;
+      background: $blurple;
+      transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
 
-  .post:hover:before {
-    background: $blurple;
-    width: calc(100% - 2.5rem);
-    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
-  }
+    .post:hover:before {
+      background: $blurple;
+      width: calc(100% - 2.5rem);
+      transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
 
-  .post:hover:after {
-    background: transparent;
-    width: calc(100% - 2.5rem);
-    transition: 0s;
+    .post:hover:after {
+      background: transparent;
+      width: calc(100% - 2.5rem);
+      transition: 0s;
+    }
   }
 
   p,
