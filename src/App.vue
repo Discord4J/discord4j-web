@@ -34,6 +34,12 @@ section {
 code.inline {
   border: 1px solid #c8e2b5;
   color: #6db33f;
+  a {
+    color: inherit;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .blurple {
