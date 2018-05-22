@@ -50,8 +50,8 @@ export default class Blog extends Vue {}
 
     &:hover {
       background-color: #fcfdff;
-      box-shadow: 0 4px 6px rgba(35, 39, 42, 0.1),
-        0 0 0 1px rgba(35, 39, 42, 0.075);
+      box-shadow: 0 6px 12px rgba(47, 57, 89, 0.1),
+        0 0 10px 1px rgba(47, 57, 89, 0.05);
 
       .post-title {
         color: #36487f;
