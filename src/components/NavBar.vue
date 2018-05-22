@@ -72,6 +72,11 @@ span.navbar-item {
   width: 4rem;
 }
 
+.navbar-menu.is-active {
+  position: absolute;
+  width: 100%;
+}
+
 .nav-text {
   margin-left: 0.5rem;
   font-family: "Uni Sans";
