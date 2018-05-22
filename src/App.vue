@@ -21,15 +21,7 @@ export default class App extends Vue {}
 </script>
 
 <style lang="scss">
-@import "~bulma/bulma";
-@import "prism.scss";
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,500|Montserrat");
-@import "style.scss";
-
-@font-face {
-  font-family: "Uni Sans";
-  src: url("/fonts/Uni Sans Heavy.woff");
-}
+@import "colours.scss";
 
 section {
   border-bottom: 2px solid #eeeeee;
@@ -53,17 +45,19 @@ code.inline {
 }
 
 .title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
-html, body, #app {
+html,
+body,
+#app {
   height: 100%;
 }
 
 #app {
   display: flex;
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

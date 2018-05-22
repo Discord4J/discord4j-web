@@ -36,7 +36,7 @@ export default class NavBar extends Vue {
 </script>
 
 <style lang="scss">
-@import "../style.scss";
+@import "../colours.scss";
 
 span.navbar-item {
   padding-right: 0;

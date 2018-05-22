@@ -1,3 +1,9 @@
+// styles
+import "bulma"
+import "@/prism.scss"
+import "@/main.scss"
+
+// main
 import Vue from "vue"
 import App from "./App.vue"
 import router from "./router"
@@ -13,5 +19,5 @@ Prism.plugins.customClass.prefix("prism-")
 new Vue({
   router,
   store,
-  render: (h) => h(App),
+  render: h => h(App),
 }).$mount("#app")

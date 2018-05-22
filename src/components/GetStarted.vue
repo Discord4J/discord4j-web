@@ -92,7 +92,7 @@ resolvers += "jitpack.io" at "https://jitpack.io"`
 </script>
 
 <style lang="scss">
-@import "../style.scss";
+@import "../colours.scss";
 
 .box.code .tabs {
   margin: 0;

@@ -23,7 +23,7 @@ export default class Hero extends Vue {}
 </script>
 
 <style lang="scss">
-@import "../style.scss";
+@import "../colours.scss";
 
 .hero {
   border-bottom: 2px solid #efefef;
