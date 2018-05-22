@@ -50,11 +50,17 @@ export default class Footer extends Vue {}
   padding: 0;
   .top {
     padding: 2rem 0;
+    .columns {
+      margin: 0;
+      .title {
+        margin-bottom: 1rem;
+      }
+    }
   }
 
   .bottom {
     background-color: $footer-dark;
-    padding: 1.5rem 0;
+    padding: 1.5rem 1rem;
   }
 }
 </style>
