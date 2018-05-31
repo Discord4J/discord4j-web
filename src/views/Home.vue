@@ -6,7 +6,7 @@
         .columns
           .column
             .img
-              i.fas.fa-sync-alt.fa-5x
+              reactor-logo
             h2.title Reactive
             p
               | Discord4J is a reactive interface for the official 
@@ -36,10 +36,13 @@
 import { Component, Vue } from "vue-property-decorator"
 import Hero from "@/components/Hero.vue"
 import GetStarted from "@/components/GetStarted.vue"
+import ReactorLogo from "@/components/ReactorLogo.vue"
 
 @Component({
   components: {
-    Hero, GetStarted,
+    Hero,
+    GetStarted,
+    ReactorLogo,
   },
 })
 export default class Home extends Vue {}
@@ -49,6 +52,9 @@ export default class Home extends Vue {}
 @import "../colours.scss";
 
 .about {
+  circle, ellipse {
+    transition: all 0.15s ease, transform 0.15s ease;
+  }
   .column {
     .img {
       transition: color 0.15s ease, transform 0.15s ease;
@@ -57,6 +63,14 @@ export default class Home extends Vue {}
       .img {
         transform: translateY(-2px);
         color: $blurple-light;
+      }
+      svg {
+        circle {
+          fill: #8fa4e3;
+        }
+        ellipse {
+          stroke: #8fa4e3;
+        }
       }
     }
   }
