@@ -4,26 +4,89 @@
       h1.title.is-size-2 The Blog
       p.subtitle.anim Your source of Discord4J updates
       .container
-        .posts
-          a.post
-            p.post-date 21 May 2018
-            h2.post-title Website redesign launched!
-            p.post-subtitle A brand new look
-          a.post
-            p.post-date 18 April 2018
-            h2.post-title 2.10.1 Released
-            p.post-subtitle Now on JCenter and Maven Central
-          a.post
-            p.post-date 04 March 2018
-            h2.post-title 2.10.0 Released
-            p.post-subtitle Reworks and breaking changes
+        .posts(v-if="posts !== null")
+          a.post(v-for="(post, index) in posts", @click="openPost(index)")
+            p.post-date {{ formatDate(post.created) }}
+            h2.post-title {{ post.title }}
+            p.post-subtitle {{ post.summary }}
+            .post-body(v-if="postIndex === index", v-html="post.body")
+        .error(v-if="error !== null")
+          h2.title Uh oh...
+          p There was an error in fetching our blog posts from ButterCMS
+          p
+            strong {{ error.status }} {{ error.statusText }}
+            |  - {{ error.detail }}
+        nav.pagination(role='navigation', aria-label='pagination', v-if="meta !== null")
+          ul.pagination-list
+            li(v-for="page in Math.ceil(meta.count / 5)")
+              a.pagination-link(@click="getPage(page)", :class="{ 'is-current': pageNum === page }") {{ page }}
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator"
+import { butter, Error, BlogPost, MetaEntity, DataEntity } from "@/buttercms"
+
+const PAGE_SIZE: number = 5
+const monthMap = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+]
 
 @Component
-export default class Blog extends Vue {}
+export default class Blog extends Vue {
+  private pageNum: number = 1
+  private posts: DataEntity[] | null = null
+  private error: Error | null = null
+  private postIndex: number = 0
+  private meta: MetaEntity | null = null
+
+  public formatDate(dateStr: string): string {
+    const d = new Date(dateStr)
+    const year = d.getFullYear()
+    const month = monthMap[d.getMonth()]
+    const day = d.getDay()
+
+    return `${day < 10 ? "0" : ""}${day} ${month} ${year}`
+  }
+
+  public created() {
+    this.getPage()
+  }
+
+  public openPost(index: number) {
+    this.postIndex = index
+  }
+
+  // retrieve blog posts from buttercms and update posts data or show error
+  private getPage(num?: number) {
+    if (num !== undefined) {
+      this.pageNum = num
+    }
+    butter.post
+      .list({ page: this.pageNum, page_size: PAGE_SIZE })
+      .then((resp: any) => {
+        this.posts = resp.data.data
+        this.meta = resp.data.meta
+      })
+      .catch((resp: any) => {
+        this.error = {
+          status: resp.status,
+          statusText: resp.statusText,
+          detail: resp.data.detail,
+        }
+      })
+  }
+}
 </script>
 
 <style lang="scss">
@@ -35,8 +98,25 @@ export default class Blog extends Vue {}
 .blog {
   font-family: "Montserrat", sans-serif;
 
+  .pagination-list {
+    justify-content: center;
+  }
+
   a {
     color: inherit;
+  }
+
+  .error {
+    display: inline-block;
+    margin-top: 4rem;
+    border-radius: 0.5rem;
+    padding: 3rem 4rem;
+    margin: 4rem auto;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      box-shadow: 0 6px 12px rgba(47, 57, 89, 0.1),
+        0 0 10px 1px rgba(47, 57, 89, 0.05);
+    }
   }
 
   .post {

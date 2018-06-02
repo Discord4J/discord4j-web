@@ -9,6 +9,7 @@
     "types": "dts-gen -m vue-prism-component -overwrite -f 'node_modules/@types/vue-prism-component'"
   },
   "dependencies": {
+    "buttercms": "^1.1.1",
     "vue": "^2.5.16",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^6.0.0",
