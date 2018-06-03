@@ -9,8 +9,8 @@
               | .
             br
             p To interact with all facets of the Discord API built on top of all the other modules, import the 
-              code.inline
-                a(href="https://github.com/Discord4J/Discord4J/tree/v3#core") core
+              a.code(href="https://github.com/Discord4J/Discord4J/tree/v3#core")
+                code.inline core
               |  module into your favourite dependency manager (see the example configurations).
           .column
             h2.title Configuration
@@ -96,6 +96,12 @@ resolvers += "jitpack.io" at "https://jitpack.io"`
 
 <style lang="scss">
 @import "../colours.scss";
+
+a.code:hover {
+  code {
+    text-decoration: underline;
+  }
+}
 
 .box.code .tabs {
   margin: 0;

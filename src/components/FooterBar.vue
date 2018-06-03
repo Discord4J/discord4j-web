@@ -29,9 +29,13 @@
       .container
         p Copyright © 2018 Discord4J - Licensed under 
           a(href="https://www.gnu.org/licenses/lgpl-3.0.en.html") LGPLv3
-          | . Powered by 
-          a(href="https://vuejs.org") Vue.js
           | .
+        p Powered by 
+          a.affiliate.smaller(href="https://vuejs.org")
+            img(src="https://vuejs.org/images/logo.png", height="1")
+          |  and 
+          a.affiliate(href="https://buttercms.com")
+            img(src="https://cdn.buttercms.com/PGJPyIwaQ2KnOA8UyKfH")
 </template>
 
 <script lang="ts">
@@ -62,6 +66,19 @@ export default class Footer extends Vue {}
     border-top: 1px solid #eeeeee;
     background-color: $footer-dark;
     padding: 1.5rem 1rem;
+  }
+
+  .affiliate {
+    img {
+      vertical-align: middle;
+      display: inline-block;
+      max-height: 2rem;
+    }
+    &.smaller {
+      img {
+        max-height: 1.25rem;
+      }
+    }
   }
 }
 </style>

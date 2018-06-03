@@ -1,12 +1,14 @@
 <template lang="html">
-  <svg class="reactor-logo" xmlns="http://www.w3.org/2000/svg" width="86.43" height="80" viewBox="0 0 22.868 21.167">
-    <g transform="matrix(.09317 0 0 .09317 -1.188 -4.467)">
-      <circle r="27.781" cy="161.533" cx="135.467"/>
-      <ellipse ry="75.093" rx="118.088" cy="161.533" cx="135.467" fill="none" stroke-width="9.26"/>
-      <ellipse transform="rotate(60)" ry="75.093" rx="118.088" cy="-36.551" cx="207.625" fill="none" stroke-width="9.26"/>
-      <ellipse transform="rotate(120)" ry="75.093" rx="118.088" cy="-198.084" cx="72.159" fill="none" stroke-width="9.26"/>
-    </g>
-  </svg>
+  <div class="img reactor-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="86.43" height="80" viewBox="0 0 22.868 21.167">
+      <g transform="matrix(.09317 0 0 .09317 -1.188 -4.467)">
+        <circle r="27.781" cy="161.533" cx="135.467"/>
+        <ellipse ry="75.093" rx="118.088" cy="161.533" cx="135.467" fill="none" stroke-width="9.26"/>
+        <ellipse transform="rotate(60)" ry="75.093" rx="118.088" cy="-36.551" cx="207.625" fill="none" stroke-width="9.26"/>
+        <ellipse transform="rotate(120)" ry="75.093" rx="118.088" cy="-198.084" cx="72.159" fill="none" stroke-width="9.26"/>
+      </g>
+    </svg>
+  </div>
 </template>
 
 <script lang="ts">
@@ -26,5 +28,6 @@ export default class ReactorLogo extends Vue {}
   ellipse {
     stroke: $blurple;
   }
+  max-height: 5em;
 }
 </style>

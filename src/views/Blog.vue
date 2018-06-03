@@ -5,11 +5,12 @@
       p.subtitle.anim Your source of Discord4J updates
       .container
         .posts(v-if="posts !== null")
-          a.post(v-for="(post, index) in posts", @click="openPost(index)")
-            p.post-date {{ formatDate(post.created) }}
-            h2.post-title {{ post.title }}
-            p.post-subtitle {{ post.summary }}
-            .post-body(v-if="postIndex === index", v-html="post.body")
+          .post(v-for="(post, index) in posts")
+            .post-meta(@click="togglePost(index)")
+              p.post-date {{ formatDate(post.created) }}
+              h2.post-title {{ post.title }}
+              p.post-subtitle {{ post.summary }}
+            blog-post(v-if="postIndex === index", :post="post.body")
         .error(v-if="error !== null")
           h2.title Uh oh...
           p There was an error in fetching our blog posts from ButterCMS
@@ -24,7 +25,14 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator"
-import { butter, Error, BlogPost, MetaEntity, DataEntity } from "@/buttercms"
+import {
+  butter,
+  Error,
+  ButterBlogPost,
+  MetaEntity,
+  DataEntity,
+} from "@/buttercms"
+import BlogPost from "@/components/BlogPost.vue"
 
 const PAGE_SIZE: number = 5
 const monthMap = [
@@ -42,12 +50,16 @@ const monthMap = [
   "December",
 ]
 
-@Component
+@Component({
+  components: {
+    BlogPost,
+  },
+})
 export default class Blog extends Vue {
   private pageNum: number = 1
   private posts: DataEntity[] | null = null
   private error: Error | null = null
-  private postIndex: number = 0
+  private postIndex: number | null = null
   private meta: MetaEntity | null = null
 
   public formatDate(dateStr: string): string {
@@ -63,8 +75,12 @@ export default class Blog extends Vue {
     this.getPage()
   }
 
-  public openPost(index: number) {
-    this.postIndex = index
+  public togglePost(index: number) {
+    if (this.postIndex === index) {
+      this.postIndex = null
+    } else {
+      this.postIndex = index
+    }
   }
 
   // retrieve blog posts from buttercms and update posts data or show error
@@ -135,10 +151,6 @@ export default class Blog extends Vue {
 
       .post-title {
         color: #36487f;
-      }
-
-      p,
-      h2 {
         padding-left: 0.375rem;
       }
     }
@@ -151,6 +163,9 @@ export default class Blog extends Vue {
   .post {
     position: relative;
     display: block;
+  }
+
+  .post-meta {
     cursor: pointer;
   }
 
@@ -169,6 +184,7 @@ export default class Blog extends Vue {
     .post:before {
       left: 1.5rem;
     }
+
     .post:after {
       right: 1rem;
       background: $blurple;
@@ -195,7 +211,6 @@ export default class Blog extends Vue {
 
   .post-date {
     font-size: 1rem;
-    font-weight: 300;
   }
 
   @include tablet {
@@ -242,5 +257,9 @@ export default class Blog extends Vue {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+.post-body {
+  font-family: "Open Sans", sans-serif;
 }
 </style>

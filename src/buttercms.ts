@@ -7,7 +7,7 @@ export interface Error {
   detail: string
 }
 
-export interface BlogPost {
+export interface ButterBlogPost {
   meta: MetaEntity
   data: DataEntity[]
 }

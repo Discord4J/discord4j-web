@@ -5,8 +5,7 @@
       .container
         .columns
           .column
-            .img
-              reactor-logo
+            reactor-logo
             h2.title Reactive
             p
               | Discord4J is a reactive interface for the official 

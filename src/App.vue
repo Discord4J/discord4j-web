@@ -28,10 +28,6 @@ section {
   &:last-of-type {
     border-bottom: none;
   }
-  p {
-    font-family: "Raleway", sans-serif;
-    font-weight: 500;
-  }
 }
 
 .box.code {
