@@ -28,7 +28,7 @@
               | Written in Java 8 and built on top of 
               a(href="https://github.com/netty/netty") Netty
               | , Discord4J offers a fast, functional, and completely non-blocking API with lazy processing included.
-    get-started
+    get-started#get-started
     affiliates
 </template>
 

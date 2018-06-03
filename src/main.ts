@@ -9,12 +9,15 @@ import App from "./App.vue"
 import router from "./router"
 import store from "./store"
 import Prism from "prismjs"
+import VueScrollTo from "vue-scrollto"
 import "prismjs/plugins/custom-class/prism-custom-class.js"
 import "prismjs/components/prism-java"
 import "prismjs/components/prism-groovy"
 
 Vue.config.productionTip = false
 Prism.plugins.customClass.prefix("prism-")
+
+Vue.use(VueScrollTo)
 
 new Vue({
   router,

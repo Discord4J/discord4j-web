@@ -8,7 +8,7 @@
             span.blurple 4J
         h1.subtitle.has-text-weight-bold A JVM-based REST/WS wrapper for the official 
           a(href="https://discordapp.com/developers/docs/intro") Discord Bot API
-        a.button.is-success.is-large
+        a.button.is-success.is-large(v-scroll-to="'#get-started'")
           span.icon
             i.fas.fa-chevron-down
           span Get Started
