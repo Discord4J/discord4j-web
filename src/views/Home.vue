@@ -29,6 +29,7 @@
               a(href="https://github.com/netty/netty") Netty
               | , Discord4J offers a fast, functional, and completely non-blocking API with lazy processing included.
     get-started
+    affiliates
 </template>
 
 <script lang="ts">
@@ -36,12 +37,14 @@ import { Component, Vue } from "vue-property-decorator"
 import Hero from "@/components/Hero.vue"
 import GetStarted from "@/components/GetStarted.vue"
 import ReactorLogo from "@/components/ReactorLogo.vue"
+import Affiliates from "@/components/Affiliates.vue"
 
 @Component({
   components: {
     Hero,
     GetStarted,
     ReactorLogo,
+    Affiliates,
   },
 })
 export default class Home extends Vue {}

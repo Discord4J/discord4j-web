@@ -6,35 +6,35 @@
           .title.is-5 Documentation
           ul
             li
-              a(href="http://discord4j.readthedocs.io/en/latest/") Discord4J Docs
+              a(href="http://discord4j.readthedocs.io/en/latest/", target="_blank") Discord4J Docs
             li
-              a(href="https://jitpack.io/com/github/Discord4J/Discord4j/2.10.1/javadoc/") Javadocs
+              a(href="https://jitpack.io/com/github/Discord4J/Discord4j/2.10.1/javadoc/", target="_blank") Javadocs
         .column
           .title.is-5 Resources
           ul
             li
-              a(href="https://github.com/Discord4J/Discord4J/wiki") GitHub Wiki
+              a(href="https://github.com/Discord4J/Discord4J/wiki", target="_blank") GitHub Wiki
             li
-              a(href="https://projectreactor.io/docs/core/release/reference/") Reactor Guide
+              a(href="https://projectreactor.io/docs/core/release/reference/", target="_blank") Reactor Guide
             li
-              a(href="https://discordapp.com/developers/docs/intro") Discord API
+              a(href="https://discordapp.com/developers/docs/intro", target="_blank") Discord API
         .column
           .title.is-5 Community
           ul
             li
-              a(href="https://github.com/Discord4J") GitHub
+              a(href="https://github.com/Discord4J", target="_blank") GitHub
             li
-              a(href="https://discord.gg/NxGAeCY") Discord
+              a(href="https://discord.gg/NxGAeCY", target="_blank") Discord
     .bottom
       .container
         p Copyright © 2018 Discord4J - Licensed under 
-          a(href="https://www.gnu.org/licenses/lgpl-3.0.en.html") LGPLv3
+          a(href="https://www.gnu.org/licenses/lgpl-3.0.en.html", target="_blank") LGPLv3
           | .
         p Powered by 
-          a.affiliate.smaller(href="https://vuejs.org")
+          a.affiliate.smaller(href="https://vuejs.org", target="_blank")
             img(src="https://vuejs.org/images/logo.png", height="1")
           |  and 
-          a.affiliate(href="https://buttercms.com")
+          a.affiliate(href="https://buttercms.com", target="_blank")
             img(src="https://cdn.buttercms.com/PGJPyIwaQ2KnOA8UyKfH")
 </template>
 
