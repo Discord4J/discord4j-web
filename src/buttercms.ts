@@ -1,5 +1,5 @@
 import Butter from "buttercms"
-export const butter = Butter("8cf024fd2c17deeccb44123c981d2c893716c2ed")
+export const butter = new Butter("8cf024fd2c17deeccb44123c981d2c893716c2ed")
 
 export interface Error {
   status: number

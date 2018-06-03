@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "types": "dts-gen -m vue-prism-component -overwrite -f 'node_modules/@types/vue-prism-component'"
+    "types": "cp @types/* ./node_modules/@types -v"
   },
   "dependencies": {
     "buttercms": "^1.1.1",

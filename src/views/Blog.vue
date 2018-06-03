@@ -182,10 +182,12 @@ export default class Blog extends Vue {
     }
 
     .post:before {
+      pointer-events: none;
       left: 1.5rem;
     }
 
     .post:after {
+      pointer-events: none;
       right: 1rem;
       background: $blurple;
       transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
