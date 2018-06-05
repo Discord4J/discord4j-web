@@ -2,8 +2,9 @@
   section.section.affiliates
     h2.title.is-4 In partnership with
     .logos
-      affiliate-link(src="https://www.ej-technologies.com/products/jprofiler/overview.html", img="https://www.ej-technologies.com/images/product_banners/jprofiler_large.png")
+      affiliate-link(src="https://www.jetbrains.com/", img="/jetbrains.svg").jetbrains
       affiliate-link(src="https://buttercms.com/", img="https://cdn.buttercms.com/PGJPyIwaQ2KnOA8UyKfH")
+      affiliate-link(src="https://www.ej-technologies.com/products/jprofiler/overview.html", img="https://www.ej-technologies.com/images/product_banners/jprofiler_large.png")
 </template>
 
 <script lang="ts">
@@ -22,22 +23,34 @@ export default class Affiliates extends Vue {}
 @import "../colours.scss";
 
 .logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   max-width: 700px;
   margin: 0 auto;
 
   .link {
     display: inline-block;
   }
+
+  .jetbrains {
+    img {
+      width: 150px;
+      max-width: 150px;
+      height: 150px;
+    }
+  }
+
   a {
-    display: block;
-    max-width: 10rem;
+    display: inline-block;
     margin: 1.25rem 1rem;
 
     img {
       transition: all 0.3s ease;
       filter: grayscale(95%);
       opacity: 0.66;
-      max-width: 10rem;
+      max-width: 15rem;
     }
     &:hover {
       img {
