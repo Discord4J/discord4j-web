@@ -3,7 +3,7 @@
     .hero-body
       .container
         .logo
-          img(src="/logo.png", draggable="false", alt="Discord4J")
+          img(src="/logo.svg", draggable="false", alt="Discord4J")
           .text Discord
             span.blurple 4J
         h1.subtitle.has-text-weight-bold A JVM-based REST/WS wrapper for the official 

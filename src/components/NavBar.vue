@@ -3,7 +3,7 @@
     .container
       .navbar-brand
         router-link(to="/").navbar-item
-          img.nav-logo(src="/logo.png", draggable="false", alt="Discord4J")
+          img.nav-logo(src="/logo.svg", draggable="false", alt="Discord4J")
           .nav-text Discord
             span.blurple 4J
         .navbar-burger(role="button", aria-label="menu", aria-expanded="false", @click="showNav = !showNav", :class="{'is-active': showNav}")
