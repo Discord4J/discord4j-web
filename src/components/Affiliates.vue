@@ -1,7 +1,7 @@
 <template lang="pug">
   section.section.affiliates
     h2.title.is-4 With love and support from
-    .logos(:class="{ active: sponsorActive }")
+    #afs.logos(:class="{ active: sponsorActive }")
       affiliate-link(src="https://www.jetbrains.com/", img="/jetbrains.svg").jetbrains
       affiliate-link(src="https://buttercms.com/", img="https://cdn.buttercms.com/PGJPyIwaQ2KnOA8UyKfH")
       affiliate-link(src="https://www.ej-technologies.com/products/jprofiler/overview.html", img="https://www.ej-technologies.com/images/product_banners/jprofiler_large.png")
@@ -18,13 +18,15 @@ import AffiliateLink from "@/components/AffiliateLink.vue"
 })
 export default class Affiliates extends Vue {
   private sponsorActive: boolean = false
-  private sponsorTop: number = 0
+  private sponsorTop!: number
+  private element!: HTMLElement
 
   public mounted(): void {
-    this.sponsorTop = this.$el.offsetTop
+    this.element = this.$el.querySelector("#afs") as HTMLElement
+    this.sponsorTop = this.element.offsetTop
 
     window.addEventListener("resize", () => {
-      this.sponsorTop = this.$el.offsetTop
+      this.sponsorTop = this.element.offsetTop
     })
 
     window.addEventListener("scroll", () => {
@@ -43,7 +45,7 @@ export default class Affiliates extends Vue {
   private inView(): boolean {
     return (
       window.pageYOffset > this.sponsorTop - 100 ||
-      this.$el.getBoundingClientRect().bottom <
+      this.element.getBoundingClientRect().bottom <
         (window.innerHeight || document.documentElement.clientHeight)
     )
   }
