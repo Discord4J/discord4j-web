@@ -12,4 +12,5 @@ declare class buttercms {
 
 declare interface post {
   list(props: { page: number; page_size: number }): Promise<any>
+  retrieve(slug: string): Promise<any>
 }

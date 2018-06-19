@@ -1,22 +1,17 @@
 <template lang="pug">
   section.section.blog
     .container
-      h1.title.is-size-2 The Blog
+      h1.title.anim.is-size-2 The Blog
       p.subtitle.anim Your source for Discord4J updates
       .container
         .posts(v-if="posts !== null")
           .post(v-for="(post, index) in posts")
-            .post-meta(@click="togglePost(index)")
-              p.post-date {{ formatDate(post.created) }}
-              h2.post-title {{ post.title }}
-              p.post-subtitle {{ post.summary }}
-            blog-post(v-if="postIndex === index", :post="post.body")
-        .error(v-if="error !== null")
-          h2.title Uh oh...
-          p There was an error in fetching our blog posts from ButterCMS
-          p
-            strong {{ error.status }} {{ error.statusText }}
-            |  - {{ error.detail }}
+            router-link(:to="'/blog/' + post.slug")
+              .post-meta
+                p.post-date {{ formatDate(post.created) }}
+                h2.post-title {{ post.title }}
+                p.post-subtitle {{ post.summary }}
+        blog-error(v-if="error !== null", :error="error")
         nav.pagination(role='navigation', aria-label='pagination', v-if="meta !== null")
           ul.pagination-list
             li(v-for="page in Math.ceil(meta.count / 5)")
@@ -24,36 +19,15 @@
 </template>
 
 <script lang="ts">
+import { DateFormatter } from "@/date"
 import { Component, Vue } from "vue-property-decorator"
-import {
-  butter,
-  Error,
-  ButterBlogPost,
-  MetaEntity,
-  DataEntity,
-} from "@/buttercms"
-import BlogPost from "@/components/BlogPost.vue"
+import { butter, Error, MetaEntity, DataEntity } from "@/buttercms"
+import BlogError from "@/components/BlogError.vue"
 
 const PAGE_SIZE: number = 5
-const monthMap = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-]
 
 @Component({
-  components: {
-    BlogPost,
-  },
+  components: { BlogError },
 })
 export default class Blog extends Vue {
   private pageNum: number = 1
@@ -63,12 +37,7 @@ export default class Blog extends Vue {
   private meta: MetaEntity | null = null
 
   public formatDate(dateStr: string): string {
-    const d = new Date(dateStr)
-    const year = d.getFullYear()
-    const month = monthMap[d.getMonth()]
-    const day = d.getDay()
-
-    return `${day < 10 ? "0" : ""}${day} ${month} ${year}`
+    return DateFormatter.formatDate(dateStr)
   }
 
   public created() {
@@ -131,13 +100,20 @@ export default class Blog extends Vue {
     }
   }
 
-  .post {
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    margin: 1rem auto;
-    text-align: left;
+  .post,
+  .post-contents {
     max-width: 50rem;
+    margin: 1rem auto;
+    padding: 1.5rem;
     display: block;
+  }
+
+  .post {
+    a {
+      color: inherit;
+    }
+    border-radius: 0.5rem;
+    text-align: left;
     transition: all 0.2s ease-in-out;
 
     &:hover {
@@ -163,6 +139,40 @@ export default class Blog extends Vue {
 
   .post-meta {
     cursor: pointer;
+  }
+
+  @include tablet {
+    .post,
+    .post-contents {
+      max-width: 60rem;
+    }
+
+    .post-date {
+      float: right;
+      padding-top: 0.75rem;
+    }
+  }
+
+  .post-title {
+    font-weight: 700;
+    font-size: 1.75rem;
+  }
+
+  .post-subtitle {
+    padding-top: 0.25rem;
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+
+  h1.title.anim {
+    animation: zoom-appear 0.6s ease;
+  }
+
+  p.subtitle.anim {
+    margin-top: 0.5rem;
+    animation: slideup 0.75s ease;
+    animation-fill-mode: backwards;
+    animation-delay: 0.4s;
   }
 
   @include desktop {
@@ -210,39 +220,6 @@ export default class Blog extends Vue {
   .post-date {
     font-size: 1rem;
   }
-
-  @include tablet {
-    .post {
-      max-width: 60rem;
-    }
-
-    .post-date {
-      float: right;
-      padding-top: 0.75rem;
-    }
-  }
-
-  .post-title {
-    font-weight: 700;
-    font-size: 1.75rem;
-  }
-
-  .post-subtitle {
-    padding-top: 0.25rem;
-    font-size: 1.25rem;
-    font-weight: 300;
-  }
-
-  h1.title {
-    animation: zoom-appear 0.6s ease;
-  }
-
-  p.subtitle.anim {
-    margin-top: 0.5rem;
-    animation: slideup 0.75s ease;
-    animation-fill-mode: backwards;
-    animation-delay: 0.4s;
-  }
 }
 
 @keyframes zoom-appear {
@@ -255,9 +232,5 @@ export default class Blog extends Vue {
     transform: scale(1);
     opacity: 1;
   }
-}
-
-.post-body {
-  font-family: "Open Sans", sans-serif;
 }
 </style>
