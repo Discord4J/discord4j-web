@@ -2,7 +2,7 @@
   section.section.blog
     .container
       h1.title.is-size-2 The Blog
-      p.subtitle.anim Your source of Discord4J updates
+      p.subtitle.anim Your source for Discord4J updates
       .container
         .posts(v-if="posts !== null")
           .post(v-for="(post, index) in posts")
@@ -116,10 +116,6 @@ export default class Blog extends Vue {
 
   .pagination-list {
     justify-content: center;
-  }
-
-  a {
-    color: inherit;
   }
 
   .error {
