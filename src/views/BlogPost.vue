@@ -1,67 +1,20 @@
 <template lang="pug">
   section.section.blog
     .container
-      .post-contents(v-if="post !== null")
-        h1.title {{ post.title }}
-        p.subtitle {{ post.summary }}
-        p.subtitle Written by {{ post.author.first_name }} {{ post.author.last_name }} - {{ formatDate(post.created) }}
-        hr
-        .body(v-html="post.body")
-      blog-error(v-if="error !== null", :error="error")
+      //- .post-contents(v-if="post !== null")
+      //-   h1.title {{ post.title }}
+      //-   p.subtitle {{ post.summary }}
+      //-   p.subtitle Written by {{ post.author.first_name }} {{ post.author.last_name }} - {{ formatDate(post.created) }}
+      //-   hr
+      //-   .body(v-html="post.body")
 </template>
 
 <script lang="ts">
 import { DateFormatter } from "@/date"
 import { Component, Vue } from "vue-property-decorator"
-import {
-  butter,
-  Error,
-  Author,
-  ButterBlogPost,
-  MetaEntity,
-  DataEntity,
-} from "@/buttercms"
-import BlogError from "@/components/BlogError.vue"
 
-@Component({
-  components: { BlogError },
-})
-export default class BlogPost extends Vue {
-  private post: DataEntity = {
-    title: "",
-    summary: "",
-    author: {
-      first_name: "",
-      last_name: "",
-    } as Author,
-  } as DataEntity
-  private meta: MetaEntity = {} as MetaEntity
-  private error: Error | null = null
-
-  public formatDate(dateStr: string): string {
-    return DateFormatter.formatDate(dateStr)
-  }
-
-  public created() {
-    this.getPost()
-  }
-
-  private getPost() {
-    butter.post
-      .retrieve(this.$route.params.slug)
-      .then((resp: any) => {
-        this.post = resp.data.data
-        this.meta = resp.data.meta
-      })
-      .catch((resp: any) => {
-        this.error = {
-          status: resp.status,
-          statusText: resp.statusText,
-          detail: resp.data.detail,
-        }
-      })
-  }
-}
+@Component
+export default class BlogPost extends Vue {}
 </script>
 
 <style lang="scss">

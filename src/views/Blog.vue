@@ -4,73 +4,34 @@
       h1.title.anim.is-size-2 The Blog
       p.subtitle.anim Your source for Discord4J updates
       .container
-        .posts(v-if="posts !== null")
+        .posts
           .post(v-for="(post, index) in posts")
-            router-link(:to="'/blog/' + post.slug")
+            router-link(:to="post.path")
               .post-meta
-                p.post-date {{ formatDate(post.created) }}
+                p.post-date {{ post.date }}
                 h2.post-title {{ post.title }}
-                p.post-subtitle {{ post.summary }}
-        blog-error(v-if="error !== null", :error="error")
-        nav.pagination(role='navigation', aria-label='pagination', v-if="meta !== null")
-          ul.pagination-list
-            li(v-for="page in Math.ceil(meta.count / 5)")
-              a.pagination-link(@click="getPage(page)", :class="{ 'is-current': pageNum === page }") {{ page }}
+                p.post-subtitle {{ post.description }}
+        //- .posts(v-if="posts !== null")
+        //-   .post(v-for="(post, index) in posts")
+        //-     router-link(:to="'/blog/' + post.slug")
+        //-       .post-meta
+        //-         p.post-date {{ formatDate(post.created) }}
+        //-         h2.post-title {{ post.title }}
+        //-         p.post-subtitle {{ post.summary }}
+        //- nav.pagination(role='navigation', aria-label='pagination', v-if="meta !== null")
+        //-   ul.pagination-list
+        //-     li(v-for="page in Math.ceil(meta.count / 5)")
+        //-       a.pagination-link(@click="getPage(page)", :class="{ 'is-current': pageNum === page }") {{ page }}
 </template>
 
 <script lang="ts">
 import { DateFormatter } from "@/date"
 import { Component, Vue } from "vue-property-decorator"
-import { butter, Error, MetaEntity, DataEntity } from "@/buttercms"
-import BlogError from "@/components/BlogError.vue"
+import entries from "@/blog/auto-entries"
 
-const PAGE_SIZE: number = 5
-
-@Component({
-  components: { BlogError },
-})
+@Component
 export default class Blog extends Vue {
-  private pageNum: number = 1
-  private posts: DataEntity[] | null = null
-  private error: Error | null = null
-  private postIndex: number | null = null
-  private meta: MetaEntity | null = null
-
-  public formatDate(dateStr: string): string {
-    return DateFormatter.formatDate(dateStr)
-  }
-
-  public created() {
-    this.getPage()
-  }
-
-  public togglePost(index: number) {
-    if (this.postIndex === index) {
-      this.postIndex = null
-    } else {
-      this.postIndex = index
-    }
-  }
-
-  // retrieve blog posts from buttercms and update posts data or show error
-  private getPage(num?: number) {
-    if (num !== undefined) {
-      this.pageNum = num
-    }
-    butter.post
-      .list({ page: this.pageNum, page_size: PAGE_SIZE })
-      .then((resp: any) => {
-        this.posts = resp.data.data
-        this.meta = resp.data.meta
-      })
-      .catch((resp: any) => {
-        this.error = {
-          status: resp.status,
-          statusText: resp.statusText,
-          detail: resp.data.detail,
-        }
-      })
-  }
+  public posts = entries
 }
 </script>
 
