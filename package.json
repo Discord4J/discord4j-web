@@ -31,7 +31,7 @@
     "sass-loader": "^7.1.0",
     "tslint-config-prettier": "^1.14.0",
     "typescript": "^3.0.1",
-    "vue-autoblog": "^0.1.2",
+    "vue-autoblog": "^0.1.5",
     "vue-meta": "^1.5.2",
     "vue-prism-component": "^1.0.1",
     "vue-scrollto": "^2.11.0",
