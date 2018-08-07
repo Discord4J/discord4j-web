@@ -5,8 +5,8 @@
     "typographer": true
   },
   "directory": {
-    "inputFolder": "src/autoblog/",
-    "outputFolder": "src/"
+    "inputFolder": "src/md/",
+    "outputFolder": "src/autoblog"
   },
   "defaultStyle": "blog",
   "outputType": "vue",

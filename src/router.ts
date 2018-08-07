@@ -4,13 +4,13 @@ import Home from "@/views/Home.vue"
 import Blog from "@/views/Blog.vue"
 import NotFound from "@/views/NotFound.vue"
 import BlogPost from "@/views/BlogPost.vue"
-import autoRoutes from "@/blog/auto-routes"
+import routes from "@/autoblog/auto-routes"
 import Meta from "vue-meta"
 
 Vue.use(Router)
 Vue.use(Meta)
 
-const routes: RouteConfig[] = [
+const defaultRoutes: RouteConfig[] = [
   {
     path: "/",
     name: "home",
@@ -34,7 +34,7 @@ const routes: RouteConfig[] = [
 
 const router = new Router({
   mode: "history",
-  routes: routes.concat(autoRoutes),
+  routes: defaultRoutes.concat(routes),
 })
 
 export default router

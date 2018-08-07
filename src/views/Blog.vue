@@ -8,7 +8,7 @@
           .post(v-for="(post, index) in posts")
             router-link(:to="post.path")
               .post-meta
-                p.post-date {{ post.date }}
+                p.post-date {{ formatDate(post.date) }}
                 h2.post-title {{ post.title }}
                 p.post-subtitle {{ post.description }}
         //- .posts(v-if="posts !== null")
@@ -27,11 +27,22 @@
 <script lang="ts">
 import { DateFormatter } from "@/date"
 import { Component, Vue } from "vue-property-decorator"
-import entries from "@/blog/auto-entries"
+import entries from "@/autoblog/auto-entries"
+
+const options = {
+  month: "long",
+  year: "numeric",
+  day: "numeric",
+}
 
 @Component
 export default class Blog extends Vue {
   public posts = entries
+
+  public formatDate(dateString: string): string {
+    const date = new Date(dateString)
+    return date.toLocaleDateString("en-US", options)
+  }
 }
 </script>
 
@@ -56,8 +67,7 @@ export default class Blog extends Vue {
     margin: 4rem auto;
     transition: all 0.2s ease-in-out;
     &:hover {
-      box-shadow: 0 6px 12px rgba(47, 57, 89, 0.1),
-        0 0 10px 1px rgba(47, 57, 89, 0.05);
+      box-shadow: 0 6px 12px rgba(47, 57, 89, 0.1), 0 0 10px 1px rgba(47, 57, 89, 0.05);
     }
   }
 
@@ -79,8 +89,7 @@ export default class Blog extends Vue {
 
     &:hover {
       background-color: #fcfdff;
-      box-shadow: 0 6px 12px rgba(47, 57, 89, 0.1),
-        0 0 10px 1px rgba(47, 57, 89, 0.05);
+      box-shadow: 0 6px 12px rgba(47, 57, 89, 0.1), 0 0 10px 1px rgba(47, 57, 89, 0.05);
 
       .post-title {
         color: #36487f;
