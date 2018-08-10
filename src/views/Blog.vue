@@ -6,18 +6,11 @@
       .container
         .posts
           .post(v-for="(post, index) in posts")
-            router-link(:to="post.path")
+            router-link(:to="post.permalink")
               .post-meta
                 p.post-date {{ formatDate(post.date) }}
                 h2.post-title {{ post.title }}
                 p.post-subtitle {{ post.description }}
-        //- .posts(v-if="posts !== null")
-        //-   .post(v-for="(post, index) in posts")
-        //-     router-link(:to="'/blog/' + post.slug")
-        //-       .post-meta
-        //-         p.post-date {{ formatDate(post.created) }}
-        //-         h2.post-title {{ post.title }}
-        //-         p.post-subtitle {{ post.summary }}
         //- nav.pagination(role='navigation', aria-label='pagination', v-if="meta !== null")
         //-   ul.pagination-list
         //-     li(v-for="page in Math.ceil(meta.count / 5)")
@@ -27,7 +20,7 @@
 <script lang="ts">
 import { DateFormatter } from "@/date"
 import { Component, Vue } from "vue-property-decorator"
-import entries from "@/autoblog/auto-entries"
+import posts from "@/autoblog/auto-posts"
 
 const options = {
   month: "long",
@@ -35,9 +28,13 @@ const options = {
   day: "numeric",
 }
 
-@Component
+@Component({
+  metaInfo: {
+    title: "The Discord4J Blog",
+  },
+})
 export default class Blog extends Vue {
-  public posts = entries
+  public posts = posts
 
   public formatDate(dateString: string): string {
     const date = new Date(dateString)

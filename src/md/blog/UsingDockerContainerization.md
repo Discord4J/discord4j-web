@@ -5,6 +5,10 @@ description:
   A post describing  the technical aspects of migrating our server to a fully containerized setup
 categories: [engineering, website]
 tags: [devops, docker, docker-compose, website]
+layout: blog-post
+
+metaInfo:
+  title: Using Docker to Containerize the Website
 ---
 
 After the recent initiative to rewrite our official website, it also seemed logical to revamp the underlying infrastructure of our website. The website is now completely containerized as a result, thanks to the lovely docker and docker-compose tools. Now, the website and various aspects of the server itself should be more resilient and much easier to manage. So, what does containerization mean? What is docker? Why did we go through this effort? So let's go over some background.

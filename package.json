@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "types": "cp @types/* ./node_modules/@types -v"
+    "types": "cp @types/* ./node_modules/@types"
   },
   "dependencies": {
     "vue": "^2.5.17",
@@ -31,7 +31,7 @@
     "sass-loader": "^7.1.0",
     "tslint-config-prettier": "^1.14.0",
     "typescript": "^3.0.1",
-    "vue-autoblog": "^0.1.5",
+    "vue-autoblog": "^0.1.8",
     "vue-meta": "^1.5.2",
     "vue-prism-component": "^1.0.1",
     "vue-scrollto": "^2.11.0",
