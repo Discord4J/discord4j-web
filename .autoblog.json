@@ -13,6 +13,7 @@
   "typescript": true,
   "vue": {
     "outputMeta": true,
-    "prerender": true
+    "prerender": true,
+    "lazyRoutes": true
   }
 }

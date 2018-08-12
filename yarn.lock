@@ -7181,9 +7181,9 @@ void-elements@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
 
-vue-autoblog@0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/vue-autoblog/-/vue-autoblog-0.2.0.tgz#d28b8ed260cb94625e8a84207c6008147c3b7c14"
+vue-autoblog@0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/vue-autoblog/-/vue-autoblog-0.2.1.tgz#26b083160bc1a03d90967572460169098391b3d2"
   dependencies:
     handlebars "^4.0.11"
     js-beautify "^1.7.5"

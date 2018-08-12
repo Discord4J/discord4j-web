@@ -1,9 +1,8 @@
 import Vue from "vue"
 import Router, { RouteConfig } from "vue-router"
-import Home from "@/views/Home.vue"
-import Blog from "@/views/Blog.vue"
-import NotFound from "@/views/NotFound.vue"
-import BlogPost from "@/views/BlogPost.vue"
+const Home = () => import(/* webpackChunkName: "home" */ "@/views/Home.vue")
+const Blog = () => import(/* webpackChunkName: "blog" */ "@/views/Blog.vue")
+const NotFound = () => import(/* webpackChunkName: "not-found" */ "@/views/NotFound.vue")
 import routes from "@/autoblog/auto-routes"
 import Meta from "vue-meta"
 
@@ -20,11 +19,6 @@ const defaultRoutes: RouteConfig[] = [
     path: "/blog",
     name: "blog",
     component: Blog,
-  },
-  {
-    path: "/blog1/",
-    name: "blog-post",
-    component: BlogPost,
   },
   {
     path: "*",
