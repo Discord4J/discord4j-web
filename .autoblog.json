@@ -12,6 +12,7 @@
   "outputType": "vue",
   "typescript": true,
   "vue": {
-    "outputMeta": true
+    "outputMeta": true,
+    "prerender": true
   }
 }

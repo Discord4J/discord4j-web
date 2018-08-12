@@ -4,6 +4,8 @@
       <div class="post-contents">
         <h1 class="title">{{ post.title }}</h1>
         <p class="subtitle">{{ post.description }}</p>
+        <p class="subtitle">Written by {{ post.author.firstName }} {{ post.author.lastName }} - {{ post.dateFormatted }}</p>
+        <hr>
         <div class="body">
           {{{ content }}}
         </div>

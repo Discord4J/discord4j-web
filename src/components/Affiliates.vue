@@ -3,7 +3,6 @@
     h2.title.is-4 With love and support from
     .logos(:class="{ active: sponsorActive }")
       affiliate-link(src="https://www.jetbrains.com/", img="/jetbrains.svg").jetbrains
-      affiliate-link(src="https://buttercms.com/", img="https://cdn.buttercms.com/PGJPyIwaQ2KnOA8UyKfH")
       affiliate-link(src="https://www.ej-technologies.com/products/jprofiler/overview.html", img="https://www.ej-technologies.com/images/product_banners/jprofiler_large.png")
 </template>
 

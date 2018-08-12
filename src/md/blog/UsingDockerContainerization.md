@@ -1,11 +1,15 @@
 ---
 title: Using Docker to Containerize the Website
 date: 2018-06-09T16:43:00-05:00
+dateFormat: DD MMMM YYYY
 description:
   A post describing  the technical aspects of migrating our server to a fully containerized setup
 categories: [engineering, website]
 tags: [devops, docker, docker-compose, website]
 layout: blog-post
+author:
+  firstName: Austin
+  lastName: Varela
 
 metaInfo:
   title: Using Docker to Containerize the Website
