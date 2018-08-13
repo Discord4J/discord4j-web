@@ -6,9 +6,11 @@
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "types": "cp @types/* ./node_modules/@types"
+    "types": "cp @types/* ./node_modules/@types",
+    "clean": "rm -rf prerender-routes.js src/autoblog/"
   },
   "dependencies": {
+    "puppeteer": "^1.7.0",
     "vue": "^2.5.17",
     "vue-class-component": "^6.2.0",
     "vue-property-decorator": "^7.0.0",
@@ -17,10 +19,12 @@
   },
   "devDependencies": {
     "@types/prismjs": "^1.9.0",
+    "@vue/cli": "^3.0.0",
     "@vue/cli-plugin-babel": "^3.0.0",
     "@vue/cli-plugin-typescript": "^3.0.0",
     "@vue/cli-service": "^3.0.0",
     "bulma": "^0.7.1",
+    "dts-gen": "^0.5.7",
     "lint-staged": "^7.2.2",
     "node-sass": "^4.9.3",
     "prerender-spa-plugin": "^3.2.1",
