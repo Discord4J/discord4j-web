@@ -12,7 +12,6 @@ Requirements:
 - Install dependencies
   - `yarn install`
 - Build and develop
-- Build and develop
   1. `yarn clean`
   2.
       - `yarn serve` to run development server
