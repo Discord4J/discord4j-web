@@ -7,18 +7,16 @@ The official Discord4J website, built with [Vue.js](https://vuejs.org/) and [bul
 Requirements:
 
 - [`yarn`](https://yarnpkg.com/en/) for package management
-- Install global packages:
-  - `yarn global add @vue/cli`
-  - `yarn global add dts-gen`
 - Clone repository
   - `git clone git@github.com:Discord4J/discord4j-web.git`
 - Install dependencies
   - `yarn install`
-- Generate type definitions
-  - `yarn types`
 - Build and develop
-  - `yarn serve` to run development server
-  - `yarn build` to build for production (check `dist` folder afterwards)
+- Build and develop
+  1. `yarn clean`
+  2.
+      - `yarn serve` to run development server
+      - `yarn build` to build for production (check `dist` folder afterwards)
 
 ## Licensing
 

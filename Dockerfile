@@ -18,8 +18,7 @@ WORKDIR /discord4j-web/
 # Add user so we don't need --no-sandbox.
 RUN addgroup -S pptruser && adduser -S -g pptruser pptruser \
     && mkdir -p /home/pptruser/Downloads \
-    && chown -R pptruser:pptruser /home/pptruser \
-    && chown -R pptruser:pptruser /discord4j-web
+    && chown -R pptruser:pptruser /home/pptruser
 
 # Run everything after as non-privileged user.
 
@@ -29,11 +28,11 @@ RUN yarn --silent install && yarn --silent add puppeteer
 
 COPY . .
 
-RUN yarn clean && yarn types && npx vue-autoblog
+RUN chown -R pptruser:pptruser /discord4j-web
 
 USER pptruser
 
-RUN yarn build
+RUN yarn clean && yarn build
 
 ### Build step complete, create container of just dist folder
 FROM tianon/true

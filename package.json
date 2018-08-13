@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --open",
-    "build": "vue-cli-service build",
+    "serve": "yarn types && yarn generate && vue-cli-service serve --open",
+    "build": "yarn types && yarn generate && vue-cli-service build",
     "lint": "vue-cli-service lint",
     "types": "cp @types/* ./node_modules/@types",
-    "clean": "rm -rf prerender-routes.js src/autoblog/"
+    "clean": "rimraf prerender-routes.js src/autoblog/",
+    "generate": "yarn run vue-autoblog"
   },
   "dependencies": {
     "puppeteer": "^1.7.0",
@@ -32,6 +33,7 @@
     "prismjs": "^1.15.0",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
+    "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
     "tslint-config-prettier": "^1.14.0",
     "typescript": "^3.0.1",
