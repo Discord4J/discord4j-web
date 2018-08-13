@@ -33,6 +33,9 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator"
 import Prism from "vue-prism-component"
+import gradle from "@/snippets/gradle"
+import maven from "@/snippets/maven"
+import sbt from "@/snippets/sbt"
 
 @Component({
   components: {
@@ -41,45 +44,11 @@ import Prism from "vue-prism-component"
 })
 export default class GetStarted extends Vue {
   public heightPx: string = "279px"
+  public gradle = gradle
+  public maven = maven
+  public sbt = sbt
 
   public index: number = 0 // 0, 1, 2
-
-  public maven: string = `<!-- pom.xml -->
-
-<repositories>
-  <repository>
-    <id>jitpack.io</id>
-    <url>https://jitpack.io</url>
-  </repository>
-</repositories>
-
-<dependencies>
-  <dependency>
-    <groupId>com.github.Discord4J.Discord4J</groupId>
-    <artifactId>Discord4J-core</artifactId>
-    <version>@VERSION@</version>
-  </dependency>
-</dependencies>`
-
-  public gradle: string = `// build.gradle
-
-repositories {
-  maven {
-    url  "https://jitpack.io"
-  }
-}
-
-dependencies {
-  compile "com.github.Discord4J.Discord4J:Discord4J-core:@VERSION@"
-}`
-
-  public sbt: string = `// build.sbt
-
-libraryDependencies ++= Seq(
-  "com.github.Discord4J.Discord4J" % "Discord4J-core" % "@VERSION@"
-)
-
-resolvers += "jitpack.io" at "https://jitpack.io"`
 
   public setIndex(num: number): void {
     this.index = num
