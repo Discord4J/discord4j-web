@@ -33,9 +33,6 @@
         p Powered by 
           a.affiliate.smaller(href="https://vuejs.org", target="_blank")
             img(src="https://vuejs.org/images/logo.png", height="1")
-          |  and 
-          a.affiliate(href="https://buttercms.com", target="_blank")
-            img(src="https://cdn.buttercms.com/PGJPyIwaQ2KnOA8UyKfH")
 </template>
 
 <script lang="ts">
