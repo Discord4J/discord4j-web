@@ -20,6 +20,9 @@ import Affiliates from "@/components/home/Affiliates.vue"
     SummaryColumn,
     Affiliates,
   },
+  metaInfo: {
+    title: "Discord4J - A JVM wrapper for the Discord Bot API",
+  },
 })
 export default class Home extends Vue {}
 </script>

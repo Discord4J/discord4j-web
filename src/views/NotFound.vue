@@ -7,6 +7,17 @@
           p.subtitle This page doesn't exist!
 </template>
 
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator"
+
+@Component({
+  metaInfo: {
+    title: "Discord4J - Oops! You shouldn't be here.",
+  },
+})
+export default class NotFound extends Vue {}
+</script>
+
 <style lang="sass" scoped>
 .hero
   height: 100%

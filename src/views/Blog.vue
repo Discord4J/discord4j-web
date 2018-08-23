@@ -25,7 +25,7 @@ const options = {
 
 @Component({
   metaInfo: {
-    title: "The Discord4J Blog",
+    title: "Discord4J - The Blog Homepage",
   },
 })
 export default class Blog extends Vue {
