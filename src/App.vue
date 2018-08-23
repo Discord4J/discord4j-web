@@ -114,4 +114,8 @@ code.inline
     text-align: center
   max-width: 780px
   margin: 0 auto
+  a
+    color: $blurple
+    &:hover
+      color: $blurple-dark
 </style>
