@@ -20,59 +20,98 @@ import FooterBar from "@/components/FooterBar.vue"
 export default class App extends Vue {}
 </script>
 
-<style lang="scss">
-@import "colours.scss";
+<style lang="sass">
+@import "~bulma/sass/utilities/_all.sass"
+@import "~bulma/sass/base/_all.sass"
 
-section {
-  border-bottom: 2px solid #eeeeee;
-  &:last-of-type {
-    border-bottom: none;
-  }
-}
+@import "~bulma/sass/components/navbar.sass"
+@import "~bulma/sass/components/tabs.sass"
+@import "~bulma/sass/grid/columns.sass"
+@import "~bulma/sass/elements/box.sass"
+@import "~bulma/sass/elements/title.sass"
+@import "~bulma/sass/elements/container.sass"
+@import "~bulma/sass/elements/button.sass"
+@import "~bulma/sass/elements/content.sass"
+@import "~bulma/sass/layout/hero.sass"
+@import "~bulma/sass/layout/section.sass"
+@import "~bulma/sass/layout/footer.sass"
 
-.box.code {
-  padding: 0;
-}
+@import "sass/colours.sass"
+@import "sass/prism.scss"
 
-code.inline {
-  border: 1px solid #c8e2b5;
-  color: #6db33f;
-  a {
-    color: inherit;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
+@font-face
+  font-family: "Uni Sans"
+  src: url("/fonts/Uni Sans Heavy.woff")
 
-.blurple {
-  color: $blurple;
-}
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Nunito')
 
-.blurple.dark {
-  color: $blurple-dark;
-}
+@keyframes slideup
+  0%
+    transform: translateY(100%)
+    opacity: 0
+  100%
+    transform: translateY(0)
+    opacity: 1
 
-.title {
-  font-family: "Montserrat", sans-serif;
-}
+@keyframes zoom-appear
+  0%
+    transform: scale(0.5);
+    opacity: 0
+  100%
+    transform: scale(1)
+    opacity: 1
 
-html,
-body,
-#app {
-  height: 100%;
-}
+@keyframes appear
+  0%
+    transform: scale(0.9)
+    opacity: 0
+  100%
+    transform: scale(1)
+    opacity: 1
 
-#app {
-  display: flex;
-  flex-direction: column;
-  font-family: "Montserrat", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-}
+html, body, #app
+  height: 100%
 
-.main-content {
-  flex: 1;
-}
+#app
+  font-family: "Montserrat", "Avenir", Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-align: center
+  display: flex
+  position: relative
+  flex-direction: column
+
+.main-content
+  flex: 1
+
+.logo-text
+  color: $discord-dark
+  font-family: "Uni Sans"
+
+.blurple
+  color: $blurple
+
+.blurple-dark
+  color: $blurple-dark
+
+code, code.inline
+  color: #6db33f
+code.inline
+  border: 1px solid #c8e2b5
+  a
+    color: inherit
+    &:hover
+      text-decoration: underline
+
+// blog posts
+.blog .content
+  p, ul, li
+    font-family: "Nunito"
+    text-align: left
+    @include desktop
+      font-size: 18px
+  h1, h2, h3, h4, h5, h6, p.subtitle
+    text-align: center
+  max-width: 780px
+  margin: 0 auto
 </style>

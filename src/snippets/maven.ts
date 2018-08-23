@@ -1,4 +1,4 @@
-export default `<!-- pom.xml -->
+const text: string = `<!-- pom.xml -->
 
 <repositories>
   <repository>
@@ -14,3 +14,8 @@ export default `<!-- pom.xml -->
     <version>@VERSION@</version>
   </dependency>
 </dependencies>`
+
+export default {
+  text,
+  lines: text.split(/\n/).length,
+}

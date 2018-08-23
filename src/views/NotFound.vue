@@ -1,12 +1,21 @@
 <template lang="pug">
-  section.section.not-found
-    h1.title Oops.
-    p.subtitle This page doesn't exist!
+  section.hero.is-large
+    .hero-body
+      .container
+        .box
+          h1.title Oops.
+          p.subtitle This page doesn't exist!
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator"
+<style lang="sass" scoped>
+.hero
+  height: 100%
+  background-color: #edf0f7
 
-@Component
-export default class NotFound extends Vue {}
-</script>
+.hero-body
+  background: url("/background.svg")
+
+.box
+  padding-top: 2.5rem
+  padding-bottom: 2.5rem
+</style>

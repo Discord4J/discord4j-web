@@ -1,10 +1,10 @@
 <template lang="pug">
-  nav.navbar.has-shadow(role="navigation", aria-label="main navigation")
+  nav.navbar(role="navigation", aria-label="main navigation")
     .container
       .navbar-brand
         router-link(to="/").navbar-item
           img.nav-logo(src="/logo.svg", draggable="false", alt="Discord4J")
-          .nav-text Discord
+          .logo-text.nav-text Discord
             span.blurple 4J
         .navbar-burger(role="button", aria-label="menu", aria-expanded="false", @click="showNav = !showNav", :class="{'is-active': showNav}")
           span(aria-hidden="true")
@@ -17,13 +17,13 @@
           span.navbar-item
             a.button.is-outlined(href="https://github.com/Discord4J/Discord4J")
               span.icon
-                i.fab.fa-github
+                font-awesome-icon(:icon="['fab', 'github']")
               span View Source
           span.navbar-item
             a.button.is-outlined(href="https://discord.gg/NxGAeCY")
               span.icon.blurple
-                i.fab.fa-discord
-              span.blurple.dark Discord Server
+                font-awesome-icon(:icon="['fab', 'discord']")
+              span.blurple-dark Discord Server
 </template>
 
 <script lang="ts">
@@ -35,67 +35,30 @@ export default class NavBar extends Vue {
 }
 </script>
 
-<style lang="scss">
-@import "../colours.scss";
+<style lang="sass" scoped>
+nav.navbar
+  flex-shrink: 0
+  box-shadow: 0 2px 2px 0 #eee
 
-span.navbar-item {
-  padding-right: 0;
-}
+.navbar-menu.is-active
+  position: absolute
+  width: 100%
 
-.navbar {
-  flex-shrink: 0;
-  background-color: #ffffff;
-  &.has-shadow {
-    box-shadow: 0px 2px 2px 0 #eeeeee;
-  }
-}
+.navbar-burger
+  width: 4rem
+  height: 4rem
 
-.navbar-item {
-  user-select: none;
-}
+.nav-text
+  margin-left: 0.5rem
+  height: 2.5rem
+  font-size: 1.75rem
+  line-height: 3rem
+  &:hover
+    color: #36487f
 
-.navbar-brand {
-  a {
-    color: $discord-dark;
-    &:hover {
-      color: #36487f;
-    }
-  }
-}
+img.nav-logo
+  max-height: 3rem
 
-.navbar-item .nav-logo {
-  max-height: 3rem;
-}
-
-.navbar-burger {
-  height: 4rem;
-  width: 4rem;
-}
-
-.navbar-menu.is-active {
-  z-index: -1;
-  position: absolute;
-  width: 100%;
-  animation: slide-down 0.15s ease;
-}
-
-.nav-text {
-  margin-left: 0.5rem;
-  font-family: "Uni Sans";
-  height: 2.5rem;
-  font-size: 1.75rem;
-  line-height: 3rem;
-}
-
-@keyframes slide-down {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
+svg
+  vertical-align: -2.5px
 </style>
