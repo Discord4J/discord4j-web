@@ -12,7 +12,7 @@
           span(aria-hidden="true")
       .navbar-menu(:class="{'is-active': showNav}")
         .navbar-end
-          router-link(to="/").navbar-item Documentation
+          a(href="https://github.com/Discord4J/Discord4J/wiki", target="_blank").navbar-item Documentation
           router-link(to="/blog").navbar-item Blog
           span.navbar-item
             a.button.is-outlined(href="https://github.com/Discord4J/Discord4J")
