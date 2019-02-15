@@ -24,6 +24,8 @@ h1
   animation: slideup 0.75s ease
   animation-fill-mode: backwards
   animation-delay: 0.5s
+  &.subtitle
+    font-weight: 600
 
 .hero
   background-color: #edf0f7

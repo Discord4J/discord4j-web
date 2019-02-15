@@ -43,7 +43,7 @@ export default class App extends Vue {}
   font-family: "Uni Sans"
   src: url("/fonts/Uni Sans Heavy.woff")
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Nunito')
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Nunito|Proxima+Nova')
 
 @keyframes slideup
   0%
@@ -55,7 +55,7 @@ export default class App extends Vue {}
 
 @keyframes zoom-appear
   0%
-    transform: scale(0.5);
+    transform: scale(0.5)
     opacity: 0
   100%
     transform: scale(1)
@@ -106,7 +106,8 @@ code.inline
 // blog posts
 .blog .content
   p, ul, li
-    font-family: "Nunito"
+    font-family: "Proxima Nova"
+    line-height: 1.75em
     text-align: left
     @include desktop
       font-size: 18px
@@ -118,4 +119,12 @@ code.inline
     color: $blurple
     &:hover
       color: $blurple-dark
+
+  .description
+    font-style: italic
+  
+  .author
+    margin-bottom: 0
+    &:last-of-type
+      margin-bottom: 1em
 </style>
