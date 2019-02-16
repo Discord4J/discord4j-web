@@ -1,23 +1,38 @@
 const PrerenderSPAPlugin = require("prerender-spa-plugin")
-const path = require("path")
-const prerenderRoutes = require("./prerender-routes")
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
+const path = require("path")
 
-const isPuppeeteerUser = require("os").userInfo().username === "pptruser"
-
+// Import routes to prerender
+const prerenderRoutes = require("./prerender-routes")
 const routes = ["/", "/blog"].concat(prerenderRoutes)
 
+// For pre-rendering inside Docker
+const isPuppeteerUser = require("os").userInfo().username === "pptruser"
+
+// Options for pre-rendering
 const prerenderOptions = {
   staticDir: path.join(__dirname, "dist"),
   routes,
-}
-
-if (isPuppeeteerUser) {
-  prerenderOptions.renderer = new Renderer({
-    executablePath: "/usr/bin/chromium-browser"
+  renderer: new Renderer({
+    renderAfterTime: 5000,
+    headless: true,
   })
 }
 
+// Apply different puppeteer settings if in Docker or on local machine
+if (isPuppeteerUser) {
+  console.log("isPuppeteerUser: true -- assuming this is a Docker container")
+  prerenderOptions.renderer = new Renderer({
+    executablePath: "/usr/bin/google-chrome-unstable",
+    renderAfterTime: 5000,
+    headless: true,
+    args: ['--disable-dev-shm-usage'],
+  })
+} else {
+  console.log("isPuppeteerUser: false -- prerendering with local google-chrome")
+}
+
+// Use PrerenderSPAPlugin when building for production
 module.exports = {
   configureWebpack: config => {
     if (process.env.NODE_ENV !== "production") return
