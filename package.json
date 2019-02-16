@@ -11,6 +11,7 @@
     "generate": "yarn run vue-autoblog"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "puppeteer": "^1.12.2",
     "vue": "^2.6.6",
     "vue-class-component": "^6.3.2",

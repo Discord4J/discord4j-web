@@ -16,7 +16,7 @@
           h2.title Configuration
           .box.code
             .version
-              a.button.is-small(href="https://github.com/Discord4J/Discord4J/releases", target="_blank") v3.0.0M1
+              a.button.is-small(href="https://github.com/Discord4J/Discord4J/releases", target="_blank") {{ version }}
             .tabs.is-centered
               ul
                 li(@click="setIndex(0)", :class="{'is-active': index === 0}")
@@ -35,9 +35,8 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator"
 import Prism from "vue-prism-component"
-import gradle from "@/snippets/gradle"
-import maven from "@/snippets/maven"
-import sbt from "@/snippets/sbt"
+import axios from "axios"
+import gs, { TextLines } from "@/snippets/getting-started"
 
 @Component({
   components: {
@@ -45,8 +44,9 @@ import sbt from "@/snippets/sbt"
   },
 })
 export default class GettingStarted extends Vue {
-  public indexes = [gradle, maven, sbt]
+  public indexes: TextLines[] = [gs.gradle, gs.maven, gs.sbt]
   public index: number = 0 // 0, 1, 2 for selecting gradle, maven, or sbt
+  private version: string = gs.version
 
   /**
    * Sets the height of the code snippet box based on the number of lines in the text
@@ -60,6 +60,14 @@ export default class GettingStarted extends Vue {
    */
   public setIndex(num: number): void {
     this.index = num
+  }
+
+  public beforeCreate() {
+    axios.get("https://api.github.com/repos/Discord4J/Discord4J/releases").then(response => {
+      gs.version = response.data[0].tag_name
+      this.version = gs.version
+      this.indexes = [gs.gradle, gs.maven, gs.sbt]
+    })
   }
 }
 </script>
