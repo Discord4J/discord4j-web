@@ -15,6 +15,8 @@
         .column#snippets
           h2.title Configuration
           .box.code
+            .version
+              a.button.is-small(href="https://github.com/Discord4J/Discord4J/releases", target="_blank") v3.0.0M1
             .tabs.is-centered
               ul
                 li(@click="setIndex(0)", :class="{'is-active': index === 0}")
@@ -42,7 +44,7 @@ import sbt from "@/snippets/sbt"
     Prism,
   },
 })
-export default class GetStarted extends Vue {
+export default class GettingStarted extends Vue {
   public indexes = [gradle, maven, sbt]
   public index: number = 0 // 0, 1, 2 for selecting gradle, maven, or sbt
 
@@ -69,6 +71,8 @@ export default class GetStarted extends Vue {
 
 .box.code
   padding: 0
+  max-width: 620px
+  position: relative
 
 .tabs
   margin: 0
@@ -80,6 +84,19 @@ export default class GetStarted extends Vue {
   background-color: #f2f3f7
   p
     padding: 0 2rem
+
+.version
+  position: absolute
+  right: 0
+  top: 3.5em
+  margin-right: 1.5em
+  a.button
+    font-weight: 600
+    background: #F5F6FA
+    font-family: inherit
+    color: #649941
+    &:hover
+      border-color: #b5b5b5
 
 .slide-fade-enter-active
   transition: all 0.25s ease-in-out

@@ -43,7 +43,7 @@ export default class App extends Vue {}
   font-family: "Uni Sans"
   src: url("/fonts/Uni Sans Heavy.woff")
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Nunito|Proxima+Nova')
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Nunito')
 
 @keyframes slideup
   0%
@@ -96,12 +96,13 @@ html, body, #app
 
 code, code.inline
   color: #6db33f
+
 code.inline
   border: 1px solid #c8e2b5
+  &:hover
+    text-decoration: underline
   a
     color: inherit
-    &:hover
-      text-decoration: underline
 
 // blog posts
 .blog .content
