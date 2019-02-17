@@ -28,13 +28,23 @@
                 a(href="https://discord.gg/NxGAeCY", target="_blank") Discord
     .bottom
       .container
-        p Copyright © 2018 Discord4J - Licensed under 
+        p Copyright © 2015 - {{ currYear }} Discord4J - Licensed under 
           a(href="https://www.gnu.org/licenses/lgpl-3.0.en.html", target="_blank") LGPLv3
           | .
         p Powered by 
           a.affiliate.smaller(href="https://vuejs.org", target="_blank")
             img(src="https://vuejs.org/images/logo.png", height="1")
 </template>
+
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator"
+
+@Component
+export default class FooterBar extends Vue {
+  public currYear: number = new Date().getFullYear()
+}
+</script>
+
 
 <style lang="sass" scoped>
 @import "@/sass/colours.sass"
