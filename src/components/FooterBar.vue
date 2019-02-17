@@ -45,7 +45,6 @@ export default class FooterBar extends Vue {
 }
 </script>
 
-
 <style lang="sass" scoped>
 @import "@/sass/colours.sass"
 
