@@ -67,5 +67,5 @@ RUN yarn build
 ### Build step complete, create container of just dist folder
 FROM tianon/true
 
-WORKDIR /discord4j-web/
+WORKDIR /dist/
 COPY --from=yarn_build /discord4j-web/dist/ .
