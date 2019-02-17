@@ -107,7 +107,7 @@ code.inline
 // blog posts
 .blog .content
   p, ul, li
-    font-family: "Proxima Nova"
+    font-family: "Nunito"
     line-height: 1.75em
     text-align: left
     @include desktop
