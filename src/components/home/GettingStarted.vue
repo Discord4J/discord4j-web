@@ -38,6 +38,9 @@ import Prism from "vue-prism-component"
 import axios from "axios"
 import gs, { TextLines } from "@/snippets/getting-started"
 
+const GITHUB_RELEASE_ENDPOINT = "https://api.github.com/repos/Discord4J/Discord4J/releases"
+const tk = "8e4f6ebf6e4c1c13e7760f46995e7998c596f9e1"
+
 @Component({
   components: {
     Prism,
@@ -63,7 +66,9 @@ export default class GettingStarted extends Vue {
   }
 
   public beforeCreate() {
-    axios.get("https://api.github.com/repos/Discord4J/Discord4J/releases").then(response => {
+    axios.get(GITHUB_RELEASE_ENDPOINT, {
+      headers: { "Authorization": `token ${tk}` },
+    }).then(response => {
       gs.version = response.data[0].tag_name
       this.version = gs.version
       this.indexes = [gs.gradle, gs.maven, gs.sbt]
