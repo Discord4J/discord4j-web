@@ -9,7 +9,6 @@
             .post-meta
               p.post-date {{ formatDate(post.date) }}
               h2.post-title {{ post.title }}
-              hr2
               p.post-subtitle {{ post.description }}
 </template>
 
