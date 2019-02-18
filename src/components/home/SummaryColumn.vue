@@ -31,7 +31,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator"
-import ReactorLogo from "@/components/home/ReactorLogo.vue"
+import ReactorLogo from "@/components/logo/ReactorLogo.vue"
 
 @Component({
   components: {

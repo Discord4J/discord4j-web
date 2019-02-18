@@ -39,10 +39,6 @@ export default class App extends Vue {}
 @import "sass/colours.sass"
 @import "sass/prism.scss"
 
-@font-face
-  font-family: "Uni Sans"
-  src: url("/fonts/Uni Sans Heavy.woff")
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Nunito')
 
 @keyframes slideup
@@ -86,7 +82,6 @@ html, body, #app
 
 .logo-text
   color: $discord-dark
-  font-family: "Uni Sans"
 
 .blurple
   color: $blurple

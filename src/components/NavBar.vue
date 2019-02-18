@@ -2,10 +2,9 @@
   nav.navbar(role="navigation", aria-label="main navigation")
     .container
       .navbar-brand
-        router-link(to="/").navbar-item
+        router-link(to="/").navbar-item.home
           img.nav-logo(src="/logo.svg", draggable="false", alt="Discord4J")
-          .logo-text.nav-text Discord
-            span.blurple 4J
+          logo-text.logo-text
         .navbar-burger(role="button", aria-label="menu", aria-expanded="false", @click="showNav = !showNav", :class="{'is-active': showNav}")
           span(aria-hidden="true")
           span(aria-hidden="true")
@@ -28,8 +27,13 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator"
+import LogoText from "@/components/logo/LogoText.vue"
 
-@Component
+@Component({
+  components: {
+    LogoText,
+  },
+})
 export default class NavBar extends Vue {
   public showNav: boolean = false
 }
@@ -48,17 +52,15 @@ nav.navbar
   width: 4rem
   height: 4rem
 
-.nav-text
-  margin-left: 0.5rem
-  height: 2.5rem
-  font-size: 1.75rem
-  line-height: 3rem
-  &:hover
+.navbar-item.home:hover
+  .logo-text
     color: #36487f
 
 img.nav-logo
   max-height: 3rem
 
-svg
-  vertical-align: -2.5px
+.logo-text
+  margin-left: 0.5rem
+  max-height: 2.1rem
+  width: auto
 </style>
