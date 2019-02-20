@@ -7,6 +7,7 @@
           logo-text.logo-text
         h1.subtitle A JVM-based REST/WS wrapper for the official 
           a(href="https://discordapp.com/developers/docs/intro") Discord Bot API
+          | , written in Java.
         a.button.is-success.is-large(v-scroll-to="'#getting-started'")
           span.icon
             font-awesome-icon(icon="chevron-down")
