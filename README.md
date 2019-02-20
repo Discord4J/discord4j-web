@@ -13,7 +13,8 @@ Requirements:
   - `yarn install`
 - Build and develop
   1. `yarn clean`
-  2.
+  2. `yarn generate`
+  3.
       - `yarn serve` to run development server
       - `yarn build` to build for production (check `dist` folder afterwards)
 
