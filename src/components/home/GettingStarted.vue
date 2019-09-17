@@ -4,11 +4,11 @@
       .columns
         .column
           h2.title Getting Started
-          p Discord4J is split up into different modules for maximum flexibility. You may pick and use only what you need from the
+          p Discord4J is split up into different modules for maximum flexibility. You may pick and use only what you need from the 
             a(href="https://github.com/Discord4J/Discord4J#modules") modules list
             | .
           br
-          p To interact with all facets of the Discord API built on top of all the other modules, import the
+          p To interact with all facets of the Discord API built on top of all the other modules, import the 
             a.code(href="https://github.com/Discord4J/Discord4J#core")
               code.inline core
             |  module into your favourite dependency manager (see the example configurations).
