@@ -4,11 +4,11 @@
       .columns
         .column
           h2.title Getting Started
-          p Discord4J is split up into different modules for maximum flexibility. You may pick and use only what you need from the 
+          p Discord4J is split up into different modules for maximum flexibility. You may pick and use only what you need from the
             a(href="https://github.com/Discord4J/Discord4J#modules") modules list
             | .
           br
-          p To interact with all facets of the Discord API built on top of all the other modules, import the 
+          p To interact with all facets of the Discord API built on top of all the other modules, import the
             a.code(href="https://github.com/Discord4J/Discord4J#core")
               code.inline core
             |  module into your favourite dependency manager (see the example configurations).
@@ -38,8 +38,7 @@ import Prism from "vue-prism-component"
 import axios from "axios"
 import gs, { TextLines } from "@/snippets/getting-started"
 
-const GITHUB_RELEASE_ENDPOINT = "https://api.github.com/repos/Discord4J/Discord4J/releases"
-const tk = "8e4f6ebf6e4c1c13e7760f46995e7998c596f9e1"
+const MAVEN_SEARCH = "https://cors-anywhere.herokuapp.com/https://search.maven.org/solrsearch/select?q=g:%22com.discord4j%22+AND+a:%22discord4j-core%22&core=gav&rows=1&wt=json"
 
 @Component({
   components: {
@@ -66,10 +65,8 @@ export default class GettingStarted extends Vue {
   }
 
   public beforeCreate() {
-    axios.get(GITHUB_RELEASE_ENDPOINT, {
-      headers: { "Authorization": `token ${tk}` },
-    }).then(response => {
-      gs.version = response.data[0].tag_name
+    axios.get(MAVEN_SEARCH).then(response => {
+      gs.version = response.data.response.docs[0].v
       this.version = gs.version
       this.indexes = [gs.gradle, gs.maven, gs.sbt]
     })
