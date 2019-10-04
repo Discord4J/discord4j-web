@@ -29,7 +29,7 @@ if (IS_PROD) {
   if (isPuppeteerUser) {
     console.log("isPuppeteerUser: true -- assuming this is a Docker container")
     prerenderOptions.renderer = new Renderer({
-      executablePath: "/usr/bin/google-chrome-unstable",
+      executablePath: "/usr/bin/chromium-browser",
       renderAfterTime: 5000,
       headless: true,
       args: ['--disable-dev-shm-usage'],
