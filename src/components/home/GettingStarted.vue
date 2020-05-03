@@ -38,7 +38,14 @@ import Prism from "vue-prism-component"
 import axios from "axios"
 import gs, { TextLines } from "@/snippets/getting-started"
 
-const MAVEN_SEARCH = "https://cors-anywhere.herokuapp.com/https://search.maven.org/solrsearch/select?q=g:%22com.discord4j%22+AND+a:%22discord4j-core%22&core=gav&rows=1&wt=json"
+const VERSIONS_API = "https://api.discord4j.com/versions"
+
+interface VersionResponse {
+  prerelease: boolean
+  tag: string
+  title: string
+  url: string
+}
 
 @Component({
   components: {
@@ -64,9 +71,10 @@ export default class GettingStarted extends Vue {
     this.index = num
   }
 
-  public beforeCreate() {
-    axios.get(MAVEN_SEARCH).then(response => {
-      gs.version = response.data.response.docs[0].v
+  public mounted() {
+    axios.get(VERSIONS_API).then(response => {
+      const versions: VersionResponse[] = response.data
+      gs.version = versions.find(v => !v.prerelease)!.tag
       this.version = gs.version
       this.indexes = [gs.gradle, gs.maven, gs.sbt]
     })
@@ -91,7 +99,7 @@ export default class GettingStarted extends Vue {
   text-align: left
   h2
     text-align: center
-  background-color: #f2f3f7
+    background-color: #f2f3f7
   p
     padding: 0 2rem
 
