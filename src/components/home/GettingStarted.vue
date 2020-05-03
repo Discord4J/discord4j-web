@@ -97,9 +97,9 @@ export default class GettingStarted extends Vue {
 
 #getting-started
   text-align: left
+  background-color: #f2f3f7
   h2
     text-align: center
-    background-color: #f2f3f7
   p
     padding: 0 2rem
 
