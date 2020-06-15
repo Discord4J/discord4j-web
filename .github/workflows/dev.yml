@@ -1,0 +1,25 @@
+name: Dev CI
+
+on:
+  push:
+    branches: [ dev ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checks out repository under $GITHUB_WORKSPACE
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Install latest Node.js
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: '14'
+
+    - run: yarn install --frozen-lockfile
+    - run: yarn lint
+    - run: yarn clean
+    - run: yarn generate
+    - run: yarn build
