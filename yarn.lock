@@ -8795,10 +8795,10 @@ void-elements@^2.0.1:
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
   integrity sha1-wGavtYK7HLQSjWDqkjkulNXp2+w=
 
-vue-autoblog@^0.2.7:
-  version "0.2.7"
-  resolved "https://registry.yarnpkg.com/vue-autoblog/-/vue-autoblog-0.2.7.tgz#4327b8c52c8460ce75991dd6e0e7f4df62cf7c98"
-  integrity sha512-Mv1kQJbbYpfdKVeDJNaVON4aSeG48Qq3HLIiJTR/udQNKPy0rcnHLjTlE81E3Jac5LnV8ZNFeau97yiTHj/ytg==
+vue-autoblog@^0.2.8:
+  version "0.2.8"
+  resolved "https://registry.yarnpkg.com/vue-autoblog/-/vue-autoblog-0.2.8.tgz#04d667c50ce1b72aa0ab9a81699e4cbcb6e6179c"
+  integrity sha512-rZitffCvBzCi0oA1p5c63PFXdMejIrw27WIBy6dwVMYLUAyDMvb8m9PwIcLYOs2SO5KzXMkjNNhPPaHFKshxbQ==
   dependencies:
     handlebars "^4.7.6"
     js-beautify "^1.11.0"
