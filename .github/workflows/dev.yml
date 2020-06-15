@@ -18,8 +18,17 @@ jobs:
       with:
         node-version: '14'
 
-    - run: yarn install --frozen-lockfile
-    - run: yarn lint
-    - run: yarn clean
-    - run: yarn generate
-    - run: yarn build
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+
+    - name: Clean working directory
+      run: yarn clean
+
+    - name: Generate blog routes
+      run: yarn generate
+
+    - name: Linting
+      run: yarn lint
+
+    - name: Build for production environment
+      run: yarn build
