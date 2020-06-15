@@ -23,3 +23,4 @@ yarn-error.log*
 # vue-autoblog generated files
 src/autoblog/
 prerender-routes.js
+src/md/**/*.vue
