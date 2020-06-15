@@ -54,7 +54,7 @@ interface VersionResponse {
 })
 export default class GettingStarted extends Vue {
   public indexes: TextLines[] = [gs.gradle, gs.maven, gs.sbt]
-  public index: number = 0 // 0, 1, 2 for selecting gradle, maven, or sbt
+  public index = 0 // 0, 1, 2 for selecting gradle, maven, or sbt
   private version: string = gs.version
 
   /**
@@ -71,12 +71,15 @@ export default class GettingStarted extends Vue {
     this.index = num
   }
 
-  public mounted() {
+  public mounted(): void {
     axios.get(VERSIONS_API).then(response => {
       const versions: VersionResponse[] = response.data
-      gs.version = versions.find(v => !v.prerelease)!.tag
-      this.version = gs.version
-      this.indexes = [gs.gradle, gs.maven, gs.sbt]
+      const version = versions.find(v => !v.prerelease)?.tag
+      if (version) {
+        gs.version = version
+        this.version = version
+        this.indexes = [gs.gradle, gs.maven, gs.sbt]
+      }
     })
   }
 }

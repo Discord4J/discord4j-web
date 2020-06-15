@@ -1,4 +1,3 @@
-/* tslint:disable */
 declare module "@fortawesome/*"
 
 declare module "vue-prism-component" {
@@ -6,12 +5,12 @@ declare module "vue-prism-component" {
 
   export const props: {
     code: {
-      type: any,
+      type: any
     }
     language: {
       default: string
-      type: any,
-    },
+      type: any
+    }
   }
 
   export function render(h: any, ctx: any): any

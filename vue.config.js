@@ -21,7 +21,7 @@ const prerenderOptions = {
   postProcess(context) {
     context.html = context.html.replace(`id="app"`, `id="app" data-server-rendered="true"`)
     return context
-  }
+  },
 }
 
 // Apply different puppeteer settings if in Docker or on local machine
@@ -32,7 +32,7 @@ if (IS_PROD) {
       executablePath: "/usr/bin/chromium-browser",
       renderAfterTime: 5000,
       headless: true,
-      args: ['--disable-dev-shm-usage'],
+      args: ["--disable-dev-shm-usage"],
     })
   } else {
     console.log("isPuppeteerUser: false -- prerendering with local google-chrome")
@@ -45,9 +45,7 @@ module.exports = {
     if (!IS_PROD) return
 
     return {
-      plugins: [
-        new PrerenderSPAPlugin(prerenderOptions),
-      ],
+      plugins: [new PrerenderSPAPlugin(prerenderOptions)],
     }
   },
 }

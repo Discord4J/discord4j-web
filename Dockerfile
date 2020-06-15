@@ -24,12 +24,12 @@ COPY LICENSE LICENSE
 COPY README.md README.md
 COPY .browserslistrc .browserslistrc
 COPY .dockerignore .dockerignore
+COPY .eslintrc.js .eslintrc.js
 COPY .gitignore .gitignore
 COPY .postcssrc.js .postcssrc.js
 COPY .prettierrc.yaml .prettierrc.yaml
 COPY babel.config.js babel.config.js
 COPY tsconfig.json tsconfig.json
-COPY tslint.json tslint.json
 
 # Install required dependencies (from yarn.lock / package.json), including puppeteer (Puppeteer v1.17.0 works with Chromium 76)
 COPY package.json package.json

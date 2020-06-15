@@ -38,7 +38,7 @@ import ReactorLogo from "@/components/logo/ReactorLogo.vue"
     ReactorLogo,
   },
 })
-export default class SummaryColumn extends Vue{}
+export default class SummaryColumn extends Vue {}
 </script>
 
 <style lang="sass" scoped>

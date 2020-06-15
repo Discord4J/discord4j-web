@@ -101,16 +101,19 @@ code.inline
 
 // blog posts
 .blog .content
+  max-width: 780px
+  margin: 0 auto
+
   p, ul, li
     font-family: "Nunito"
     line-height: 1.75em
     text-align: left
     @include desktop
       font-size: 18px
+
   h1, h2, h3, h4, h5, h6, p.subtitle
     text-align: center
-  max-width: 780px
-  margin: 0 auto
+
   a
     color: $blurple
     &:hover
@@ -118,7 +121,7 @@ code.inline
 
   .description
     font-style: italic
-  
+
   .author
     margin-bottom: 0
     &:last-of-type

@@ -16,8 +16,9 @@ export default class AffiliateLink extends Vue {
 <style lang="sass" scoped>
 a
   transition: all 0.15s ease, transform 0.15s ease
-  &:hover
-    transform: translateY(-3px)
   display: inline-block
   margin: 1.25rem 1rem
+
+  &:hover
+    transform: translateY(-3px)
 </style>

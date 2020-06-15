@@ -39,7 +39,7 @@ export default class Blog extends Vue {
 
 <style lang="sass">
 @import "~bulma/sass/utilities/initial-variables.sass"
-@import "~bulma/sass/utilities/derived-variables.sass"
+@import "~bulma/sass/utilities/derived-variables.scss"
 @import "~bulma/sass/utilities/mixins.sass"
 
 // main blog page
@@ -51,10 +51,12 @@ export default class Blog extends Vue {
 .blog
   .title.anim
     animation: zoom-appear 0.6s ease
+
   .subtitle.anim
-      animation: slideup 0.75s ease
-      animation-fill-mode: backwards
-      animation-delay: 0.4s
+    animation: slideup 0.75s ease
+    animation-fill-mode: backwards
+    animation-delay: 0.4s
+
   a
     color: inherit
 
@@ -62,11 +64,13 @@ export default class Blog extends Vue {
     padding: 2rem
     text-align: left
     transition: all 0.1s ease-in-out
+
     &:hover
       background-color: #fcfdff
       box-shadow: 0 6px 12px rgba(47, 57, 89, 0.1), 0 0 10px 1px rgba(47, 57, 89, 0.05)
+
       .post-title
-        color: #36487f;
+        color: #36487f
         padding-left: 0.25rem
 
   .post-title
@@ -74,8 +78,10 @@ export default class Blog extends Vue {
     font-weight: 700
     font-size: 1.75rem
     margin-bottom: 0.5rem
+
   .post-subtitle, .post-date
     font-size: 1.1rem
+
   @include desktop
     .post-date
       margin-top: 0.5rem

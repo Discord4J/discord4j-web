@@ -26,10 +26,9 @@ import LogoText from "@/components/logo/LogoText.vue"
 export default class HeroSection extends Vue {}
 </script>
 
-
 <style lang="sass" scoped>
 @import "~bulma/sass/utilities/initial-variables.sass"
-@import "~bulma/sass/utilities/derived-variables.sass"
+@import "~bulma/sass/utilities/derived-variables.scss"
 @import "~bulma/sass/utilities/mixins.sass"
 
 h1

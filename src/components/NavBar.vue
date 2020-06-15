@@ -35,7 +35,7 @@ import LogoText from "@/components/logo/LogoText.vue"
   },
 })
 export default class NavBar extends Vue {
-  public showNav: boolean = false
+  public showNav = false
 }
 </script>
 
