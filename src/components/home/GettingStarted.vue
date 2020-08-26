@@ -22,14 +22,17 @@
                 li(@click="setIndex(0)", :class="{'is-active': index === 0}")
                   a Gradle
                 li(@click="setIndex(1)", :class="{'is-active': index === 1}")
-                  a Maven
+                  a Kotlin
                 li(@click="setIndex(2)", :class="{'is-active': index === 2}")
+                  a Maven
+                li(@click="setIndex(3)", :class="{'is-active': index === 3}")
                   a SBT
             .code-wrapper(:style="{ height: heightPx }")
               transition(name="slide-fade", tag="div", mode="out-in")
                 prism(v-if="index === 0", key="gradle", language="groovy") {{ indexes[0].text }}
-                prism(v-if="index === 1", key="maven", language="xml") {{ indexes[1].text }}
-                prism(v-if="index === 2", key="sbt", language="java") {{ indexes[2].text }}
+                prism(v-if="index === 1", key="kotlin", language="kotlin") {{ indexes[1].text }}
+                prism(v-if="index === 2", key="maven", language="xml") {{ indexes[2].text }}
+                prism(v-if="index === 3", key="sbt", language="java") {{ indexes[3].text }}
 </template>
 
 <script lang="ts">
@@ -53,8 +56,8 @@ interface VersionResponse {
   },
 })
 export default class GettingStarted extends Vue {
-  public indexes: TextLines[] = [gs.gradle, gs.maven, gs.sbt]
-  public index: number = 0 // 0, 1, 2 for selecting gradle, maven, or sbt
+  public indexes: TextLines[] = [gs.gradle, gs.kotlin, gs.maven, gs.sbt]
+  public index: number = 0 // 0, 1, 2, 3 for selecting gradle, kotlin, maven, or sbt
   private version: string = gs.version
 
   /**
@@ -76,7 +79,7 @@ export default class GettingStarted extends Vue {
       const versions: VersionResponse[] = response.data
       gs.version = versions.find(v => !v.prerelease)!.tag
       this.version = gs.version
-      this.indexes = [gs.gradle, gs.maven, gs.sbt]
+      this.indexes = [gs.gradle, gs.kotlin, gs.maven, gs.sbt]
     })
   }
 }
