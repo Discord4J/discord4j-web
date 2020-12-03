@@ -31,7 +31,10 @@
         p Copyright © 2015 - {{ currYear }} Discord4J - Licensed under 
           a(href="https://www.gnu.org/licenses/lgpl-3.0.en.html", target="_blank") LGPLv3
           | .
-        p Powered by 
+        p This site is powered by 
+          a(href="https://www.netlify.com/") Netlify
+          | .
+        p Built using 
           a.affiliate.smaller(href="https://vuejs.org", target="_blank")
             img(src="https://vuejs.org/images/logo.png", height="1")
 </template>
