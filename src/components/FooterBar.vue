@@ -7,7 +7,7 @@
             .title.is-5 Documentation
             ul
               li
-                a(href="https://github.com/Discord4J/Discord4J/wiki", target="_blank") Discord4J Docs
+                a(href="https://docs.discord4j.com", target="_blank") Discord4J Docs
               li
                 a(href="http://javadoc.io/doc/com.discord4j/discord4j-core/", target="_blank") Javadocs
           .column
