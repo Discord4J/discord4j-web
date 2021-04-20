@@ -18,6 +18,18 @@ dependencies {
 `)
     }
 
+    /**
+     * Kotlin Gradle script build.gradle.kts configuration template
+     */
+    get kotlin(): TextLines {
+        return this.textLines(`// build.gradle.kts
+
+dependencies {
+    implementation("com.discord4j:discord4j-core:${this.version}")
+}
+`)
+    }
+
     /*
      * Maven pom.xml configuration template
      */
